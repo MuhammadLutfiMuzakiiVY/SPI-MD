@@ -1,0 +1,21 @@
+{
+  "watch": [
+    "index.js",
+    "config.js",
+    "src/",
+    "plugins/",
+    "case/"
+  ],
+  "ignore": [
+    "node_modules/**",
+    "database/**",
+    "session/**",
+    "temp/**",
+    "data/**",
+    "storage/**",
+    "*.json",
+    "package.json",
+    "package-lock.json"
+  ],
+  "ext": "js,json"
+}
