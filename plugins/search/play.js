@@ -1,6 +1,6 @@
 /**
   * Nama Plugin: Play
-  * Pembuat Code: Zann
+  * Pembuat Code: Muhammad Lutfi Muzaki
   * API/Scraper: api.nexray.web.id
   * Saluran: https://www.instagram.com/sipalinginformasi/
 */

@@ -1,6 +1,6 @@
 /**
  * Credits & Thanks to
- * Developer = Lucky Archz ( Zann )
+ * Developer = Muhammad Lutfi Muzaki
  * Lead owner = HyuuSATAN
  * Owner = Keisya
  * Designer = Danzzz

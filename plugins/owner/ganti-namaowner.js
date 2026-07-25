@@ -7,7 +7,7 @@ const pluginConfig = {
     category: 'owner',
     description: 'Ganti nama owner di config.js',
     usage: '.ganti-namaowner <nama baru>',
-    example: '.ganti-namaowner Zann',
+    example: '.ganti-namaowner Muhammad Lutfi Muzaki',
     isOwner: true,
     isPremium: false,
     isGroup: false,

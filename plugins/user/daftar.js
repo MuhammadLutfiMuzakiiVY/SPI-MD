@@ -6,7 +6,7 @@ const pluginConfig = {
     category: 'user',
     description: 'Daftar sebagai user bot untuk mendapatkan rewards',
     usage: '.daftar <nama>',
-    example: '.daftar Zann',
+    example: '.daftar Lutfi',
     isOwner: false,
     isPremium: false,
     isGroup: false,
@@ -44,7 +44,7 @@ async function handler(m, { sock }) {
             `📝 *ᴅᴀꜰᴛᴀʀ ᴜsᴇʀ*\n\n` +
             `> Masukkan nama kamu!\n\n` +
             `*Contoh:*\n` +
-            `\`${m.prefix}daftar Zann\`\n\n` +
+            `\`${m.prefix}daftar Lutfi\`\n\n` +
             `*Rewards:*\n` +
             `> 💰 +${(config.registration?.rewards?.koin || 30000).toLocaleString('id-ID')} Koin\n` +
             `> ⚡ +${config.registration?.rewards?.energi || 300} Energi\n` +

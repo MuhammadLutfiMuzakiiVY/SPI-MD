@@ -24,7 +24,7 @@ async function handler(m, { sock }) {
     
     const credits = [
         { name: 'hyuuOkkotsuX', role: 'Lead Staff', icon: '👨‍💻' },
-        { name: 'Zann', role: 'Creator Si Paling Informasi dan APK Stardem Ourin', icon: '👨‍💻' },
+        { name: 'Muhammad Lutfi Muzaki', role: 'Creator Si Paling Informasi dan APK Stardem Ourin', icon: '👨‍💻' },
         { name: 'SenzOkkotsu', role: 'Asisstant Developer', icon: '👨‍💻' },
         { name: 'Ell', role: 'Asisstant Developer', icon: '👨‍💻' },
         { name: 'Aqell', role: 'Developer SC BUG Ourin Glitch', icon: '👨‍💻' },

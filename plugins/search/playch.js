@@ -1,6 +1,6 @@
 /**
   * Nama Plugin: PlayCh (Saluran)
-  * Pembuat Code: Zann
+  * Pembuat Code: Muhammad Lutfi Muzaki
   * API: api.nexray.web.id
   * Convert: ffmpeg mp3 → ogg/opus (support saluran)
 */

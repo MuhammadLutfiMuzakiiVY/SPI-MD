@@ -157,6 +157,6 @@ Sistem kami `Open Source`. Jika ada *bugs* (celah error) atau ingin menabahkan *
 ---
 
 <div align="center">
-  <b>Dibuat dengan ❤️ oleh Zann</b>
+  <b>Dibuat dengan ❤️ oleh Muhammad Lutfi Muzaki</b>
   <p>Jangan lupa kasih ⭐ (Star) pada repo ini jika kamu merasa terbantu!</p>
 </div>
