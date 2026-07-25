@@ -1,5 +1,5 @@
-import * as jasaotp from '../../src/lib/ourin-otp-service.js'
-import te from '../../src/lib/ourin-error.js'
+import * as jasaotp from '../../src/lib/spi-otp-service.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'otpbalance',
     alias: ['otpbal', 'otpsaldo', 'ceksaldootp'],

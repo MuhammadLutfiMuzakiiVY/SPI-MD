@@ -1,7 +1,7 @@
-import { startSchedulerByName, getFullSchedulerStatus } from '../../src/lib/ourin-scheduler.js'
-import { initSholatScheduler } from '../../src/lib/ourin-sholat-scheduler.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import te from '../../src/lib/ourin-error.js'
+import { startSchedulerByName, getFullSchedulerStatus } from '../../src/lib/spi-scheduler.js'
+import { initSholatScheduler } from '../../src/lib/spi-sholat-scheduler.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'startschedule',
     alias: ['startscheduler', 'schedstart', 'resumeschedule'],

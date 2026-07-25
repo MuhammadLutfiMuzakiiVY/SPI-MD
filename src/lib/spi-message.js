@@ -3,7 +3,7 @@
 import { generateWAMessageFromContent, proto } from 'ourin'
 import fs from 'fs'
 import path from 'path'
-import { fetchBuffer, getMimeType } from './ourin-utils.js'
+import { fetchBuffer, getMimeType } from './spi-utils.js'
 /**
  * @typedef {Object} MessageOptions
  * @property {Object} [quoted] - Pesan untuk di-quote

@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import os from 'os'
 import { execSync } from 'child_process'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const COMMANDS = [
     'shinobu', 'megumin', 'bully', 'cuddle', 'cry', 'hug', 'awoo', 
     'kiss', 'lick', 'pat', 'smug', 'bonk', 'yeet', 'blush', 'smile', 'wave', 'highfive', 

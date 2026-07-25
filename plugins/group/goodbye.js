@@ -1,10 +1,10 @@
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/ourin-database.js";
-import { createGoodbyeCard } from "../../src/lib/ourin-welcome-card.js";
-import { resolveAnyLidToJid } from "../../src/lib/ourin-lid.js";
+import { getDatabase } from "../../src/lib/spi-database.js";
+import { createGoodbyeCard } from "../../src/lib/spi-welcome-card.js";
+import { resolveAnyLidToJid } from "../../src/lib/spi-lid.js";
 import path from "path";
 import fs from "fs";
-import te from "../../src/lib/ourin-error.js";
+import te from "../../src/lib/spi-error.js";
 const pluginConfig = {
   name: "goodbye",
   alias: ["bye", "leave"],
@@ -137,7 +137,7 @@ async function sendGoodbyeMessage(sock, groupJid, participant, groupMeta) {
       isLid,
       isLidConverted,
       lidToJid,
-    } = await import("../../src/lib/ourin-lid.js");
+    } = await import("../../src/lib/spi-lid.js");
 
     if (groupMeta?.participants) {
       cacheParticipantLids(groupMeta.participants);

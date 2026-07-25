@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import te from '../../src/lib/ourin-error.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'stock',
     alias: ['addstock', 'importstock', 'liststock', 'delstock', 'clearstock', 'stockinfo'],
@@ -36,7 +36,7 @@ async function handler(m, { sock }) {
     if (cmd === 'stock' || cmd === 'stockinfo') {
         const { default: path } = await import('path')
         const { default: fs } = await import('fs')
-        const storeImage = path.join(process.cwd(), 'assets', 'images', 'ourin-store.jpg')
+        const storeImage = path.join(process.cwd(), 'assets', 'images', 'spi-store.jpg')
         
         let txt = `📦 *sᴛᴏᴄᴋ ɪɴꜰᴏ*\n\n`
         

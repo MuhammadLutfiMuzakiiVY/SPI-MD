@@ -1,13 +1,13 @@
 import config from "../../config.js";
 import path from "path";
 import fs from "fs";
-import * as timeHelper from "../../src/lib/ourin-time.js";
+import * as timeHelper from "../../src/lib/spi-time.js";
 let _canvas = null;
 async function _getCanvas() {
   if (!_canvas) _canvas = await import("@napi-rs/canvas");
   return _canvas;
 }
-import te from "../../src/lib/ourin-error.js";
+import te from "../../src/lib/spi-error.js";
 const pluginConfig = {
   name: "nulis",
   alias: ["tulis", "write"],
@@ -30,7 +30,7 @@ try {
     process.cwd(),
     "assets",
     "images",
-    "ourin-games.jpg",
+    "spi-games.jpg",
   );
   if (fs.existsSync(thumbPath)) thumbTools = fs.readFileSync(thumbPath);
 } catch (e) {}

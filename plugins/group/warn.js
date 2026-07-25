@@ -1,6 +1,6 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { getParticipantJid } from '../../src/lib/ourin-lid.js'
-import te from '../../src/lib/ourin-error.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { getParticipantJid } from '../../src/lib/spi-lid.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'warn',
     alias: ['warning', 'peringatan'],

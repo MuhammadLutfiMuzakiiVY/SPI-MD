@@ -1,5 +1,5 @@
 import axios from 'axios'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 import moment from 'moment-timezone'
 
 const pluginConfig = {

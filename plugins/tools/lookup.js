@@ -1,7 +1,7 @@
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'lookup',
     alias: ['dnslookup', 'dns', 'whois'],
@@ -20,7 +20,7 @@ const pluginConfig = {
 
 let thumbTools = null
 try {
-    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'ourin-games.jpg')
+    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'spi-games.jpg')
     if (fs.existsSync(thumbPath)) thumbTools = fs.readFileSync(thumbPath)
 } catch (e) {}
 

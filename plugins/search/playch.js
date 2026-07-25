@@ -12,7 +12,7 @@ import { exec } from 'child_process'
 import { promisify } from 'util'
 import yts from 'yt-search'
 import config from '../../config.js'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const run = promisify(exec)
 const pluginConfig = {
     name: "playch",

@@ -1,7 +1,7 @@
 
 
-import { getDatabase } from './ourin-database.js'
-import { logger } from './ourin-logger.js'
+import { getDatabase } from './spi-database.js'
+import { logger } from './spi-logger.js'
 import moment from 'moment-timezone'
 import fs from 'fs'
 import config from '../../config.js'
@@ -620,7 +620,7 @@ async function startSewaChecker(sock) {
                                     mediaType: 1,
                                     title: 'SEWA EXPIRED',
                                     body: 'Masa sewa habis',
-                                    thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                                    thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                                     renderLargerThumbnail: true
                                 }
                             }
@@ -650,7 +650,7 @@ async function startSewaChecker(sock) {
                                     mediaType: 1,
                                     title: 'PERINGATAN SEWA',
                                     body: `Sisa: ${minutes} menit`,
-                                    thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                                    thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                                     renderLargerThumbnail: true
                                 }
                             }
@@ -671,7 +671,7 @@ async function startSewaChecker(sock) {
                                     mediaType: 1,
                                     title: 'PERINGATAN SEWA',
                                     body: `Sisa: ${days}d ${hours}h`,
-                                    thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                                    thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                                     renderLargerThumbnail: true
                                 }
                             }

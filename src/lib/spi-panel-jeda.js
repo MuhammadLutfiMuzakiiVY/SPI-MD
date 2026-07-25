@@ -1,4 +1,4 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 const DEFAULT_JEDA = 5 * 60 * 1000
 
 function formatTime(ms) {

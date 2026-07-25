@@ -2,8 +2,8 @@ import config from "../../config.js";
 import {
   getCommandsByCategory,
   getCategories,
-} from "../../src/lib/ourin-plugins.js";
-import { getDatabase } from "../../src/lib/ourin-database.js";
+} from "../../src/lib/spi-plugins.js";
+import { getDatabase } from "../../src/lib/spi-database.js";
 import fs from "fs";
 import path from "path";
 const pluginConfig = {
@@ -55,7 +55,7 @@ function toSmallCaps(text) {
 
 let cachedThumb = null;
 try {
-  const thumbPath = path.join(process.cwd(), "assets", "images", "ourin2.jpg");
+  const thumbPath = path.join(process.cwd(), "assets", "images", "spi2.jpg");
   if (fs.existsSync(thumbPath)) cachedThumb = fs.readFileSync(thumbPath);
 } catch (e) {}
 
@@ -102,8 +102,8 @@ async function handler(m, { sock, db }) {
   const saluranLink = config.saluran?.link || "";
   const botName = config.bot?.name || "Si Paling Informasi";
 
-  const imagePath = path.join(process.cwd(), "assets", "images", "ourin.jpg");
-  const thumbPath = path.join(process.cwd(), "assets", "images", "ourin2.jpg");
+  const imagePath = path.join(process.cwd(), "assets", "images", "spi.jpg");
+  const thumbPath = path.join(process.cwd(), "assets", "images", "spi2.jpg");
   let imageBuffer = fs.existsSync(imagePath)
     ? fs.readFileSync(imagePath)
     : null;

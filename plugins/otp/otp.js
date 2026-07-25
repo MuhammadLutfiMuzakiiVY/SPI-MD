@@ -1,4 +1,4 @@
-import * as jasaotp from '../../src/lib/ourin-otp-service.js'
+import * as jasaotp from '../../src/lib/spi-otp-service.js'
 import config from '../../config.js'
 import fs from 'fs'
 import path from 'path'
@@ -19,7 +19,7 @@ const pluginConfig = {
 }
 
 async function handler(m, { sock }) {
-    const { getDatabase } = await import('../../src/lib/ourin-database.js')
+    const { getDatabase } = await import('../../src/lib/spi-database.js')
     const db = getDatabase()
     const groupData = db.getGroup(m.chat) || {}
 
@@ -102,7 +102,7 @@ async function handler(m, { sock }) {
             })
         }
 
-        const otpImage = path.join(process.cwd(), 'assets', 'images', 'ourin-otp.jpg')
+        const otpImage = path.join(process.cwd(), 'assets', 'images', 'spi-otp.jpg')
         let imageBuffer = null
         if (fs.existsSync(otpImage)) {
             imageBuffer = fs.readFileSync(otpImage)

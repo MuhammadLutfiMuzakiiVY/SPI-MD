@@ -5,8 +5,8 @@ async function getSharp() {
   if (!_sharp) _sharp = (await import("sharp")).default;
   return _sharp;
 }
-import te from "../../src/lib/ourin-error.js";
-import { addExifToWebp } from "../../src/lib/ourin-exif.js";
+import te from "../../src/lib/spi-error.js";
+import { addExifToWebp } from "../../src/lib/spi-exif.js";
 
 const pluginConfig = {
   name: "stickerpack",

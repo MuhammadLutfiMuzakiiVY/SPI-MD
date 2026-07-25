@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || 'Milik-Bot-Si Paling Informasi'
 
 const pluginConfig = {
@@ -21,7 +21,7 @@ const filmSessions = new Map()
 
 let thumbFilm = null
 try {
-    const p = path.join(process.cwd(), 'assets/images/ourin-film.jpg')
+    const p = path.join(process.cwd(), 'assets/images/spi-film.jpg')
     if (fs.existsSync(p)) thumbFilm = fs.readFileSync(p)
 } catch {}
 
@@ -108,7 +108,7 @@ async function handler(m, { sock }) {
             id: `${m.prefix}filmget ${f.url}`
         }))
         
-        await sock.sendButton(m.chat, await import('fs').readFileSync('./assets/images/ourin.jpg'), text, m, {
+        await sock.sendButton(m.chat, await import('fs').readFileSync('./assets/images/spi.jpg'), text, m, {
             buttons: [{
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({

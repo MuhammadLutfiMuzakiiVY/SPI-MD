@@ -4,7 +4,7 @@ import fs from 'fs'
 import mime from 'mime-types'
 import { fileTypeFromBuffer } from 'file-type'
 import { downloadMediaMessage, getContentType } from 'ourin'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'tourl',
     alias: ['upload', 'catbox', 'url'],

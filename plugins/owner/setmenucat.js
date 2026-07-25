@@ -1,5 +1,5 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import pkg from 'ourin'
 const { generateWAMessageFromContent, proto } = pkg
 const pluginConfig = {

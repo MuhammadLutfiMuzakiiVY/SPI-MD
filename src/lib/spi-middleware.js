@@ -1,5 +1,5 @@
 import config from '../../config.js'
-import { getDatabase } from './ourin-database.js'
+import { getDatabase } from './spi-database.js'
 function levenshtein(a, b) {
     if (a.length === 0) return b.length
     if (b.length === 0) return a.length

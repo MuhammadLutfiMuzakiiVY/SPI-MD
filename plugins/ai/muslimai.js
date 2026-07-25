@@ -1,5 +1,5 @@
-import { f } from '../../src/lib/ourin-http.js'
-import te from '../../src/lib/ourin-error.js'
+import { f } from '../../src/lib/spi-http.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'muslimai',
     alias: ['islamai', 'quranai'],

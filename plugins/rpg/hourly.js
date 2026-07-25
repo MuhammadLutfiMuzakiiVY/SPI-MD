@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { addExpWithLevelCheck } from '../../src/lib/ourin-level.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { addExpWithLevelCheck } from '../../src/lib/spi-level.js'
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
@@ -21,7 +21,7 @@ const pluginConfig = {
 
 let thumbRpg = null
 try {
-    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'ourin-rpg.jpg')
+    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'spi-rpg.jpg')
     if (fs.existsSync(thumbPath)) thumbRpg = fs.readFileSync(thumbPath)
 } catch (e) {}
 

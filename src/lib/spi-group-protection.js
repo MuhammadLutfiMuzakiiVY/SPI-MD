@@ -1,7 +1,7 @@
 
 
 import { downloadMediaMessage } from 'ourin'
-import { isLid, lidToJid } from './ourin-lid.js'
+import { isLid, lidToJid } from './spi-lid.js'
 import config from '../../config.js'
 const messageCache = new Map();
 const CACHE_EXPIRY = 5 * 60 * 1000;

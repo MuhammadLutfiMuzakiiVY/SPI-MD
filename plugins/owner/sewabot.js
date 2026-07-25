@@ -1,6 +1,6 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import fs from 'fs'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'sewabot',
     alias: ['sewa'],
@@ -103,7 +103,7 @@ async function handler(m, { sock }) {
                                 mediaType: 1,
                                 title: 'SEWA BOT',
                                 body: 'Grup tidak terdaftar',
-                                thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                                thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                                 renderLargerThumbnail: true
                             }
                         }
@@ -157,7 +157,7 @@ async function handler(m, { sock }) {
                                 mediaType: 1,
                                 title: 'SEWA BOT',
                                 body: 'Grup tidak terdaftar',
-                                thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                                thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                                 renderLargerThumbnail: true
                             }
                         }

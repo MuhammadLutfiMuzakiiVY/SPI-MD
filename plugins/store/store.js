@@ -1,4 +1,4 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import pkg from 'ourin';
 const { generateWAMessageFromContent, proto } = pkg;
 import fs from 'fs'
@@ -70,7 +70,7 @@ async function handler(m, { sock, config }) {
     txt += `> \`${m.prefix}order [nomor]\`\n`
     txt += `> Contoh: \`${m.prefix}order 1\``
     
-    const storeImage = path.join(process.cwd(), 'assets', 'images', 'ourin-store.jpg')
+    const storeImage = path.join(process.cwd(), 'assets', 'images', 'spi-store.jpg')
     let imageBuffer = null
     if (fs.existsSync(storeImage)) {
         imageBuffer = fs.readFileSync(storeImage)

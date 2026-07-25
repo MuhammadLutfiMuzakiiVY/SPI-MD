@@ -2,7 +2,7 @@ import axios from 'axios'
 import crypto from 'crypto'
 import { generateWAMessage, generateWAMessageFromContent, jidNormalizedUser } from 'ourin'
 import config from '../../config.js'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'ssweb-3hasil',
     alias: ['ssweb3', 'ss3', 'screenshot3', 'screenshotweb3'],

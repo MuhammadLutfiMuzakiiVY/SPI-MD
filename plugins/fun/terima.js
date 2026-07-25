@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import * as timeHelper from '../../src/lib/ourin-time.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import * as timeHelper from '../../src/lib/spi-time.js'
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
@@ -25,7 +25,7 @@ try {
     process.cwd(),
     "assets",
     "images",
-    "ourin-games.jpg",
+    "spi-games.jpg",
   );
   if (fs.existsSync(thumbPath)) thumbFun = fs.readFileSync(thumbPath);
 } catch (e) {}

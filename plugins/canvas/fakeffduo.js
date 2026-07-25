@@ -1,7 +1,7 @@
 import axios from "axios";
 import config from "../../config.js";
-import { uploadToTmpFiles } from "../../src/lib/ourin-tmpfiles.js";
-import te from "../../src/lib/ourin-error.js";
+import { uploadToTmpFiles } from "../../src/lib/spi-tmpfiles.js";
+import te from "../../src/lib/spi-error.js";
 const pluginConfig = {
   name: "fakeffduo",
   alias: ["fakefreefirduo"],

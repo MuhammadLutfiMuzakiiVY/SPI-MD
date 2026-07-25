@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import axios from 'axios'
-import te from '../../src/lib/ourin-error.js'
-const AI_SYSTEM_PROMPT = `Kamu adalah converter plugin WhatsApp Bot. Convert plugin format lama ke format Ourin.
+import te from '../../src/lib/spi-error.js'
+const AI_SYSTEM_PROMPT = `Kamu adalah converter plugin WhatsApp Bot. Convert plugin format lama ke format SPI.
 
 FORMAT OUTPUT YANG DIHARAPKAN:
 \`\`\`javascript
@@ -52,7 +52,7 @@ PENTING: Output HANYA code JavaScript, tanpa penjelasan!`
 async function convertWithAI(code) {
     try {
         const { default: gpt52 } = await import('../../src/scraper/gpt52.js')
-        const prompt = AI_SYSTEM_PROMPT + '\n\nConvert plugin ini ke format Ourin:\n\n' + code
+        const prompt = AI_SYSTEM_PROMPT + '\n\nConvert plugin ini ke format SPI:\n\n' + code
         
         const result = await gpt52(prompt)
         
@@ -71,7 +71,7 @@ async function convertWithAI(code) {
         
         return null
     } catch (e) {
-        console.error('[OurinConvert] AI Error:', e.message)
+        console.error('[SPIConvert] AI Error:', e.message)
         return null
     }
 }
@@ -80,7 +80,7 @@ const pluginConfig = {
     name: 'ourinconvert',
     alias: ['convertplugin', 'ourinplugin', 'convertourin'],
     category: 'owner',
-    description: 'Convert format plugin external ke format Ourin (Smart System V3)',
+    description: 'Convert format plugin external ke format SPI (Smart System V3)',
     usage: '.ourinconvert [namafile] [folder]',
     example: '.ourinconvert sticker sticker',
     isOwner: true,
@@ -571,7 +571,7 @@ async function detectNeededImports(code) {
     return imports
 }
 
-async function convertToOurinFormat(code, info, handlerData, utilityCode) {
+async function convertToSPIFormat(code, info, handlerData, utilityCode) {
     const name = info.commands[0] || 'unnamed'
     const aliases = info.commands.slice(1)
     const category = info.tags || 'other'
@@ -721,7 +721,7 @@ async function handler(m, { sock }) {
                 return m.reply(`❌ *ɢᴀɢᴀʟ*\n\n> Tidak ditemukan handler.command`)
             }
             
-            convertedCode = convertToOurinFormat(code, info, handlerData, beforeHandler)
+            convertedCode = convertToSPIFormat(code, info, handlerData, beforeHandler)
             
             let fileName = cleanArgs[0] || info.commands[0]
             let folderName = cleanArgs[1] || info.tags || 'other'

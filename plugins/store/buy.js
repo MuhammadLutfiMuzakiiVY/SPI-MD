@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import * as orderPoller from '../../src/lib/ourin-order-poller.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import * as orderPoller from '../../src/lib/spi-order-poller.js'
 import path from 'path'
 import fs from 'fs'
 const pluginConfig = {
@@ -45,7 +45,7 @@ async function handler(m, { sock }) {
     const qty = parseInt(args[1]) || 1
     
     if (isNaN(productIdx) || productIdx < 0 || productIdx >= products.length) {
-        const storeImage = path.join(process.cwd(), 'assets', 'images', 'ourin-store.jpg')
+        const storeImage = path.join(process.cwd(), 'assets', 'images', 'spi-store.jpg')
         
         let txt = `💳 *ʙᴇʟɪ ᴅᴇɴɢᴀɴ sᴀʟᴅᴏ*\n\n`
         txt += `> Bayar produk menggunakan *Koin* in-game!\n`

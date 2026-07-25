@@ -1,4 +1,4 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import axios from 'axios'
 import FormData from 'form-data'
 const pluginConfig = {
@@ -54,7 +54,7 @@ async function handler(m, { sock }) {
     if (cmd === 'products' || cmd === 'produk' || cmd === 'listproduk') {
         const { default: path } = await import('path')
         const { default: fs } = await import('fs')
-        const storeImage = path.join(process.cwd(), 'assets', 'images', 'ourin-store.jpg')
+        const storeImage = path.join(process.cwd(), 'assets', 'images', 'spi-store.jpg')
         
         if (products.length === 0) {
             const emptyTxt = `📦 *ᴅᴀꜰᴛᴀʀ ᴘʀᴏᴅᴜᴋ*\n\n` +

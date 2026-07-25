@@ -4,8 +4,8 @@ import config from '../../config.js'
 import { downloadMediaMessage } from 'ourin'
 import path from 'path'
 import fs from 'fs'
-import { f } from '../../src/lib/ourin-http.js'
-import te from '../../src/lib/ourin-error.js'
+import { f } from '../../src/lib/spi-http.js'
+import te from '../../src/lib/spi-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || 'Milik-Bot-Si Paling Informasi'
 
 const pluginConfig = {

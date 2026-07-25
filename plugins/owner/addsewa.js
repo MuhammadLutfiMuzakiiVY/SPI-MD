@@ -1,8 +1,8 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import * as timeHelper from '../../src/lib/ourin-time.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import * as timeHelper from '../../src/lib/spi-time.js'
 import fs from 'fs'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'addsewa',
     alias: ['sewaadd', 'tambahsewa'],
@@ -156,7 +156,7 @@ async function handler(m, { sock }) {
                             mediaType: 1,
                             title: 'SEWA BOT AKTIF',
                             body: `Masa sewa: ${formatDuration(durationStr)}`,
-                            thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                            thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                             renderLargerThumbnail: true
                         }
                     }

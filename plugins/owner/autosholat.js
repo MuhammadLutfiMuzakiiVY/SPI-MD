@@ -1,7 +1,7 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import config from '../../config.js'
-import { getTodaySchedule, extractPrayerTimes, searchKota } from '../../src/lib/ourin-sholat-api.js'
-import te from '../../src/lib/ourin-error.js'
+import { getTodaySchedule, extractPrayerTimes, searchKota } from '../../src/lib/spi-sholat-api.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'autosholat',
     alias: ['sholat', 'autoadzan'],
@@ -160,7 +160,7 @@ async function runAutoSholat(sock) {
         isya: times.isya
     };
 
-    const { default: timeHelper } = await import('../../src/lib/ourin-time.js')
+    const { default: timeHelper } = await import('../../src/lib/spi-time.js')
     const timeNow = timeHelper.getCurrentTimeString();
 
     if (!global.autoSholatLock) global.autoSholatLock = {};

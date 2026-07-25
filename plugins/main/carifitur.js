@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import config from "../../config.js";
-import te from "../../src/lib/ourin-error.js";
+import te from "../../src/lib/spi-error.js";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -272,7 +272,7 @@ async function handler(m, { sock }) {
 
     await sock.sendButton(
       m.chat,
-      fs.readFileSync("./assets/images/ourin.jpg"),
+      fs.readFileSync("./assets/images/spi.jpg"),
       text,
       m,
       {

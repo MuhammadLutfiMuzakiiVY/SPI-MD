@@ -1,9 +1,9 @@
 import config from '../../config.js'
-import * as timeHelper from '../../src/lib/ourin-time.js'
+import * as timeHelper from '../../src/lib/spi-time.js'
 import cron from 'node-cron'
 import path from 'path'
 import fs from 'fs'
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 const pluginConfig = {
     name: 'giveaway',
     alias: ['ga', 'gaway'],
@@ -64,7 +64,7 @@ function getGiveawayImage() {
     if (fs.existsSync(imagePath)) {
         return fs.readFileSync(imagePath)
     }
-    const defaultPath = path.join(process.cwd(), 'assets', 'images', 'ourin.jpg')
+    const defaultPath = path.join(process.cwd(), 'assets', 'images', 'spi.jpg')
     if (fs.existsSync(defaultPath)) {
         return fs.readFileSync(defaultPath)
     }
@@ -516,7 +516,7 @@ async function handler(m, { sock, args: rawArgs }) {
                 thumbnail = fs.readFileSync('./assets/images/giveaway.jpg')
             } catch (e) {
                 try {
-                    thumbnail = fs.readFileSync('./assets/images/ourin.jpg')
+                    thumbnail = fs.readFileSync('./assets/images/spi.jpg')
                 } catch (e2) {}
             }
             

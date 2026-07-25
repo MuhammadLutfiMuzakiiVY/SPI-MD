@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
-import { logger } from './ourin-logger.js'
+import { logger } from './spi-logger.js'
 import config from '../../config.js'
-import { getDatabase } from './ourin-database.js'
+import { getDatabase } from './spi-database.js'
 const BACKUP_CONFIG = {
     enabled: config.backup?.enabled ?? true,
     intervalHours: config.backup?.intervalHours ?? 24,

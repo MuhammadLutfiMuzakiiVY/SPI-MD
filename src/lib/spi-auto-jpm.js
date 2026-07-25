@@ -1,6 +1,6 @@
-import { getDatabase } from './ourin-database.js'
-import { logger } from './ourin-logger.js'
-import { delay } from './ourin-utils.js'
+import { getDatabase } from './spi-database.js'
+import { logger } from './spi-logger.js'
+import { delay } from './spi-utils.js'
 import config from '../../config.js'
 import fs from 'fs'
 import path from 'path'
@@ -10,8 +10,8 @@ let isSending = false;
 let cachedThumb = null;
 
 try {
-  if (fs.existsSync("./assets/images/ourin2.jpg")) {
-    cachedThumb = fs.readFileSync("./assets/images/ourin2.jpg");
+  if (fs.existsSync("./assets/images/spi2.jpg")) {
+    cachedThumb = fs.readFileSync("./assets/images/spi2.jpg");
   }
 } catch (e) {}
 

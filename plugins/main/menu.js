@@ -2,12 +2,12 @@ import config from "../../config.js";
 import {
   formatUptime,
   getTimeGreeting,
-} from "../../src/lib/ourin-formatter.js";
+} from "../../src/lib/spi-formatter.js";
 import {
   getCommandsByCategory,
   getCategories,
-} from "../../src/lib/ourin-plugins.js";
-import { getDatabase } from "../../src/lib/ourin-database.js";
+} from "../../src/lib/spi-plugins.js";
+import { getDatabase } from "../../src/lib/spi-database.js";
 import fs from "fs";
 import path from "path";
 let _sharp = null;
@@ -204,19 +204,19 @@ function getSortedCategories(m, botMode) {
 }
 
 async function formatTime(date) {
-  const timeHelper = await import("../../src/lib/ourin-time.js");
+  const timeHelper = await import("../../src/lib/spi-time.js");
   return timeHelper.formatTime("HH:mm");
 }
 
 async function formatDateShort(date) {
-  const timeHelper = await import("../../src/lib/ourin-time.js");
+  const timeHelper = await import("../../src/lib/spi-time.js");
   return timeHelper.formatFull("dddd, DD MMMM YYYY");
 }
 
 async function buildMenuText(m, botConfig, db, uptime, botMode = "md") {
   const prefix = botConfig.command?.prefix || ".";
   const user = db.getUser(m.sender);
-  const timeHelper = await import("../../src/lib/ourin-time.js");
+  const timeHelper = await import("../../src/lib/spi-time.js");
   const timeStr = timeHelper.formatTime("HH:mm");
   const dateStr = timeHelper.formatFull("dddd, DD MMMM YYYY");
 
@@ -469,9 +469,9 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
   const botMode = groupData.botMode || "md";
   const text = await buildMenuText(m, botConfig, db, uptime, botMode);
 
-  const imagePath = path.join(process.cwd(), "assets", "images", "ourin.jpg");
-  const thumbPath = path.join(process.cwd(), "assets", "images", "ourin2.jpg");
-  const videoPath = path.join(process.cwd(), "assets", "video", "ourin.mp4");
+  const imagePath = path.join(process.cwd(), "assets", "images", "spi.jpg");
+  const thumbPath = path.join(process.cwd(), "assets", "images", "spi2.jpg");
+  const videoPath = path.join(process.cwd(), "assets", "video", "spi.mp4");
 
   let imageBuffer = fs.existsSync(imagePath)
     ? fs.readFileSync(imagePath)
@@ -542,7 +542,7 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
             process.cwd(),
             "assets",
             "images",
-            "ourin.jpg",
+            "spi.jpg",
           );
           if (fs.existsSync(ourinPath)) {
             contextThumb = fs.readFileSync(ourinPath);
@@ -730,7 +730,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
           process.cwd(),
           "assets",
           "images",
-          "ourin3.jpg",
+          "spi3.jpg",
         );
         const saluranIdV6 =
           botConfig.saluran?.id || "120363208449943317@newsletter";
@@ -841,7 +841,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
                 process.cwd(),
                 "assets",
                 "images",
-                "ourin-v7.jpg",
+                "spi-v7.jpg",
               );
               let sourceImage = fs.existsSync(defaultV7Path)
                 ? fs.readFileSync(defaultV7Path)
@@ -951,7 +951,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
       }
 
       case 8: {
-        const timeHelper = await import("../../src/lib/ourin-time.js");
+        const timeHelper = await import("../../src/lib/spi-time.js");
         const time = timeHelper.formatTime("HH:mm");
         const date = timeHelper.formatFull("DD/MM/YYYY");
         const user = db.getUser(m.sender);
@@ -1017,7 +1017,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
         menuText += `╭━━〔 💡 *𝗧𝗜𝗣𝗦* 〕━━╮\n`;
         menuText += `│ ❸ Follow channel ${saluranLink}\n`;
         menuText += `╰━━━━━━━━━━━━━━━━━━╯\n\n`;
-        menuText += `> ${randomSparkle()} *${botConfig.bot?.name || "Ourin"}* v${botConfig.bot?.version || "1.7.1"} ${randomSparkle()}`;
+        menuText += `> ${randomSparkle()} *${botConfig.bot?.name || "SPI"}* v${botConfig.bot?.version || "1.7.1"} ${randomSparkle()}`;
 
         let thumbV8 = thumbBuffer;
         if (thumbBuffer) {
@@ -1049,7 +1049,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
               sellerJid: botConfig.botNumber
                 ? `${botConfig.botNumber}@s.whatsapp.net`
                 : m.sender,
-              token: "ourin-menu-v8",
+              token: "spi-menu-v8",
               totalAmount1000: 0,
               totalCurrencyCode: "IDR",
               contextInfo: {
@@ -1068,8 +1068,8 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
         await sock.sendMessage(
           m.chat,
           {
-            image: fs.existsSync("assets/images/ourin-v8.jpg")
-              ? fs.readFileSync("assets/images/ourin-v8.jpg")
+            image: fs.existsSync("assets/images/spi-v8.jpg")
+              ? fs.readFileSync("assets/images/spi-v8.jpg")
               : imageBuffer || thumbBuffer,
             caption: menuText,
             contextInfo: getContextInfo(botConfig, m, imageBuffer, true),
@@ -1088,7 +1088,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             try {
               const resized = await (
                 await getSharp()
-              )(fs.readFileSync("./assets/images/ourin-v9.jpg"))
+              )(fs.readFileSync("./assets/images/spi-v9.jpg"))
                 .resize(300, 300, { fit: "contain", background: { r: 255, g: 255, b: 255, alpha: 1 } })
                 .jpeg({ quality: 80 })
                 .toBuffer();
@@ -1214,7 +1214,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
               process.cwd(),
               "assets",
               "images",
-              "ourin-v9.jpg",
+              "spi-v9.jpg",
             );
             const imgBuffer = fs.existsSync(imgPath)
               ? fs.readFileSync(imgPath)
@@ -1289,7 +1289,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                               description: "Menu",
                               currencyCode: "USD",
                               priceAmount1000: "1000000000000000",
-                              retailerId: botConfig.bot?.name || "Ourin",
+                              retailerId: botConfig.bot?.name || "SPI",
                               productImageCount: 1,
                             },
                             businessOwnerJid: businessJid,
@@ -1346,7 +1346,7 @@ Klik tombol di bawah untuk menampilkan menu`;
             thumbBuffer ||
             imageBuffer ||
             fs.readFileSync(
-              path.join(process.cwd(), "assets", "images", "ourin-allmenu.jpg"),
+              path.join(process.cwd(), "assets", "images", "spi-allmenu.jpg"),
             );
 
           const catRows = menuSorted.map(({ cat, cmds }) => ({
@@ -1386,8 +1386,8 @@ Klik tombol di bawah untuk menampilkan menu`;
                   title: botConfig.bot?.name || "Si Paling Informasi",
                   body: "Runtime: " + process.uptime() + "s",
                   mediaType: 1,
-                  thumbnail: fs.existsSync("./assets/images/ourin-v11.jpg")
-                    ? fs.readFileSync("./assets/images/ourin-v11.jpg")
+                  thumbnail: fs.existsSync("./assets/images/spi-v11.jpg")
+                    ? fs.readFileSync("./assets/images/spi-v11.jpg")
                     : thumbBuffer || imageBuffer,
                   mediaUrl: saluranLink,
                   sourceUrl: saluranLink,
@@ -1489,7 +1489,7 @@ Klik tombol di bawah untuk menampilkan menu`;
             thumbBuffer ||
             imageBuffer ||
             fs.readFileSync(
-              path.join(process.cwd(), "assets", "images", "ourin-allmenu.jpg"),
+              path.join(process.cwd(), "assets", "images", "spi-allmenu.jpg"),
             );
 
           const catButtons = menuSorted.map(({ cat }) => ({
@@ -1581,8 +1581,8 @@ Klik tombol di bawah untuk menampilkan menu`;
                   title: botConfig.bot?.name || "Si Paling Informasi",
                   body: `🍃 OWNER BOT: ${botConfig.owner?.name || "Si Paling Informasi"}`,
                   mediaType: 1,
-                  thumbnail: fs.existsSync("./assets/images/ourin-v11.jpg")
-                    ? fs.readFileSync("./assets/images/ourin-v11.jpg")
+                  thumbnail: fs.existsSync("./assets/images/spi-v11.jpg")
+                    ? fs.readFileSync("./assets/images/spi-v11.jpg")
                     : thumbBuffer || imageBuffer,
                   mediaUrl: botConfig?.info?.website || saluranLink,
                   sourceUrl: botConfig?.info?.website || saluranLink,
@@ -1653,7 +1653,7 @@ Klik tombol di bawah untuk menampilkan menu`;
           process.cwd(),
           "assets",
           "images",
-          "ourin3.jpg",
+          "spi3.jpg",
         );
         const saluranIdV13 =
           botConfig.saluran?.id || "120363208449943317@newsletter";
@@ -1916,7 +1916,7 @@ Klik tombol di bawah untuk menampilkan menu`;
             return canvas.toBuffer("image/jpeg");
           }
 
-          const levelHelper = await import("../../src/lib/ourin-level.js");
+          const levelHelper = await import("../../src/lib/spi-level.js");
           const profileUser = db.getUser(m.sender) || {};
           const exp = profileUser.exp || 0;
           const level = levelHelper.calculateLevel(exp);
@@ -1956,7 +1956,7 @@ Klik tombol di bawah untuk menampilkan menu`;
             mediaType: 1,
             showAdAttribution: false,
             renderLargerThumbnail: true,
-            thumbnail: fs.readFileSync("./assets/images/ourin.jpg"),
+            thumbnail: fs.readFileSync("./assets/images/spi.jpg"),
           },
         };
 
@@ -2018,7 +2018,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
           const saluranNameV14 =
             botConfig.saluran?.name || botConfig.bot?.name || "Si Paling Informasi";
           const docuThumbV14 = fs.readFileSync(
-            path.join(process.cwd(), "assets", "images", "ourin-v11.jpg"),
+            path.join(process.cwd(), "assets", "images", "spi-v11.jpg"),
           );
 
           const catButtons = menuSorted.map(({ cat }) => ({
@@ -2089,7 +2089,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
                       externalAdReply: {
                         title: botConfig?.bot?.name,
                         body: `🌾 Dikembangkan oleh ${botConfig?.bot?.developer}`,
-                        thumbnail: fs.readFileSync("./assets/images/ourin.jpg"),
+                        thumbnail: fs.readFileSync("./assets/images/spi.jpg"),
                         sourceUrl: `https://instagram.com/ourin.md`,
                         mediaUrl: `https://instagram.com/ourin.md`,
                         mediaType: 2,
@@ -2251,7 +2251,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
                 sellerJid: botConfig.botNumber
                   ? `${botConfig.botNumber}@s.whatsapp.net`
                   : m.sender,
-                token: "ourin-menu-v8",
+                token: "spi-menu-v8",
                 totalAmount1000: 3333333,
                 totalCurrencyCode: "IDR",
                 contextInfo: {
@@ -2329,7 +2329,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
                 fileName: `${greeting}`,
                 jpegThumbnail: await (
                   await getSharp()
-                )(fs.readFileSync("./assets/images/ourin2.jpg"))
+                )(fs.readFileSync("./assets/images/spi2.jpg"))
                   .resize(300, 300, { fit: "contain", background: { r: 255, g: 255, b: 255, alpha: 1 } })
                   .toBuffer(),
                 contextInfo: {
@@ -2341,7 +2341,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
                   title: titles,
                   body: `Hai ${m.pushName}! Gunakan bot ini dengan bijak`,
                   previewType: "VIDEO",
-                  thumbnail: fs.readFileSync("./assets/images/ourin.jpg"),
+                  thumbnail: fs.readFileSync("./assets/images/spi.jpg"),
                   sourceUrl: config.info.website,
                   renderLargerThumbnail: true,
                   containsAutoReply: true,

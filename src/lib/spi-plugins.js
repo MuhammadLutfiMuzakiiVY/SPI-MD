@@ -2,7 +2,7 @@
 
 import fs from 'fs'
 import path from 'path'
-import { theme, chalk, logger } from './ourin-logger.js'
+import { theme, chalk, logger } from './spi-logger.js'
 /**
  * @typedef {Object} PluginConfig
  * @property {string} name - Nama command (tanpa prefix)
@@ -210,7 +210,7 @@ function printPluginTable(plugins) {
  * @param {string} pluginsDir - Path ke directory plugins
  * @returns {number} Jumlah plugin yang berhasil dimuat
  * @example
- * const count = loadPlugins('./ourin-plugins');
+ * const count = loadPlugins('./spi-plugins');
  * console.log(`Loaded ${count} plugins`);
  */
 async function loadPlugins(pluginsDir) {

@@ -1,5 +1,5 @@
 import generateCustomTTS from '../../src/scraper/topmedia.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import config from '../../config.js'
 import axios from 'axios'
 import { exec } from 'child_process'

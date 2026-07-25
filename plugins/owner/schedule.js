@@ -1,4 +1,4 @@
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 /**
  * @file plugins/owner/schedule.js
  * @description Command untuk mengelola scheduled messages
@@ -6,7 +6,7 @@ import te from '../../src/lib/ourin-error.js'
  * @version 1.1.0
  */
 
-import { scheduleMessage, cancelScheduledMessage, getScheduledMessages, getSchedulerStatus, formatTimeRemaining, getMsUntilTime } from '../../src/lib/ourin-scheduler.js'
+import { scheduleMessage, cancelScheduledMessage, getScheduledMessages, getSchedulerStatus, formatTimeRemaining, getMsUntilTime } from '../../src/lib/spi-scheduler.js'
 /**
  * Konfigurasi plugin
  */

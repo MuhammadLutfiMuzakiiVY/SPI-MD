@@ -1,9 +1,9 @@
-*OURIN MD V2.4*
+*SPI MD V2.4*
 
 🌾 Apa aja yang di update?
 - *[MIGRATE]* migrasi dari CJS ke ESM, *jadi script ourin versi 2.4 dst. tidak lagi menggunakan tipe Common JS, tetapi menggunakan tipe Ecma Script Module*
-- *[MIGRATE]* migrasi dari baileys github `OurinGlitch-Baileys` ke npm `ourin-baileys`
-🖇 baileys terbaru ourin: https://www.npmjs.com/package/ourin-baileys
+- *[MIGRATE]* migrasi dari baileys github `SPIGlitch-Baileys` ke npm `spi-baileys`
+🖇 baileys terbaru ourin: https://www.npmjs.com/package/spi-baileys
 
 🍃 *[FIX]*
 Berikut ini adalah beberapa plugin yang di FIX

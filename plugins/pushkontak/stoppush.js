@@ -1,4 +1,4 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import { getGroupMode } from '../group/botmode.js'
 const pluginConfig = {
     name: 'stoppush',

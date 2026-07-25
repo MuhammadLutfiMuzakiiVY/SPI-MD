@@ -1,5 +1,5 @@
-import { stopAllJadibots, getActiveJadibots } from '../../src/lib/ourin-jadibot-manager.js'
-import te from '../../src/lib/ourin-error.js'
+import { stopAllJadibots, getActiveJadibots } from '../../src/lib/spi-jadibot-manager.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'stopalljadibot',
     alias: ['stopsemuajadibot', 'killalljadibots'],

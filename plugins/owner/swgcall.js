@@ -2,7 +2,7 @@ import { fileTypeFromBuffer } from 'file-type'
 import fs from 'fs'
 import path from 'path'
 import { config } from '../../config.js'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 
 const botConfig = config
 
@@ -166,7 +166,7 @@ async function handler(m, { sock, db }) {
             : 'Unknown'
 
         let thumbnail = null
-        try { thumbnail = fs.readFileSync('./assets/images/ourin2.jpg') } catch {}
+        try { thumbnail = fs.readFileSync('./assets/images/spi2.jpg') } catch {}
 
         const estimatedTime = Math.ceil(groupList.length * 1.5)
 

@@ -1,4 +1,4 @@
-import { getRandomItem } from '../../src/lib/ourin-game-data.js'
+import { getRandomItem } from '../../src/lib/spi-game-data.js'
 const pluginConfig = {
     name: 'dare',
     alias: ['dareq', 'tantang'],

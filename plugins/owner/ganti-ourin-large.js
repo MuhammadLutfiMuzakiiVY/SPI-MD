@@ -1,13 +1,13 @@
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
-    name: 'ourin-large',
+    name: 'spi-large',
     alias: ['setourinlarge', 'gantiourinlarge'],
     category: 'owner',
-    description: 'Preset: Ganti gambar ourin.jpg, serta ourin-v7 hingga ourin-v11.jpg sekaligus',
-    usage: '.ourin-large (reply/kirim gambar)',
-    example: '.ourin-large',
+    description: 'Preset: Ganti gambar spi.jpg, serta spi-v7 hingga spi-v11.jpg sekaligus',
+    usage: '.spi-large (reply/kirim gambar)',
+    example: '.spi-large',
     isOwner: true,
     isPremium: false,
     isGroup: false,
@@ -21,7 +21,7 @@ async function handler(m, { sock }) {
     const isImage = m.isImage || (m.quoted && m.quoted.type === 'imageMessage')
     
     if (!isImage) {
-        return m.reply(`🖼️ *ᴏᴜʀɪɴ ʟᴀʀɢᴇ ᴘʀᴇsᴇᴛ*\n\n> Kirim/reply gambar untuk mengganti kumpulan foto besar (ourin.jpg, ourin-v7.jpg s/d ourin-v11.jpg) sekaligus.\n> Pastikan rasio gambar sesuai dengan yang diinginkan.`)
+        return m.reply(`🖼️ *ᴏᴜʀɪɴ ʟᴀʀɢᴇ ᴘʀᴇsᴇᴛ*\n\n> Kirim/reply gambar untuk mengganti kumpulan foto besar (spi.jpg, spi-v7.jpg s/d spi-v11.jpg) sekaligus.\n> Pastikan rasio gambar sesuai dengan yang diinginkan.`)
     }
     
     await m.react('🕕')
@@ -40,12 +40,12 @@ async function handler(m, { sock }) {
         }
         
         const targetImages = [
-            'ourin.jpg',
-            'ourin-v7.jpg',
-            'ourin-v8.jpg',
-            'ourin-v9.jpg',
-            'ourin-v10.jpg',
-            'ourin-v11.jpg'
+            'spi.jpg',
+            'spi-v7.jpg',
+            'spi-v8.jpg',
+            'spi-v9.jpg',
+            'spi-v10.jpg',
+            'spi-v11.jpg'
         ]
         
         const assetsDir = path.join(process.cwd(), 'assets', 'images')
@@ -59,7 +59,7 @@ async function handler(m, { sock }) {
         }
         
         await m.react('✅')
-        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Gambar bundle *ourin-large* berhasil diganti secara massal.\n> Mencakup: ${targetImages.join(', ')}\n> Restart bot jika gambar tidak langsung berubah.`)
+        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Gambar bundle *spi-large* berhasil diganti secara massal.\n> Mencakup: ${targetImages.join(', ')}\n> Restart bot jika gambar tidak langsung berubah.`)
         
     } catch (error) {
         await m.react('☢')

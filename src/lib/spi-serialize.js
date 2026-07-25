@@ -27,11 +27,11 @@ import {
   getCachedJid,
   cacheParticipantLids,
   cacheLidJid,
-} from "./ourin-lid.js";
+} from "./spi-lid.js";
 import fs from "node-webpmux/io.js";
 import fsc from "fs";
 import axios from "axios";
-import { getDatabase } from "./ourin-database.js";
+import { getDatabase } from "./spi-database.js";
 let _prefixCache = null;
 let _prefixCacheTime = 0;
 const PREFIX_CACHE_TTL = 30000;
@@ -434,7 +434,7 @@ function createContextInfo(jid, text, title = "", body = "", thumbnail = null) {
       conversation: text,
     };
     contextInfo.participant = jid;
-    contextInfo.stanzaId = "OURINAI" + Date.now();
+    contextInfo.stanzaId = "SPIAI" + Date.now();
   }
 
   if (title || body || thumbnail) {
@@ -749,8 +749,8 @@ async function serialize(sock, msg, store = {}) {
       try {
         const thumbPath =
           replyVariant <= 4
-            ? "./assets/images/ourin2.jpg"
-            : "./assets/images/ourin.jpg";
+            ? "./assets/images/spi2.jpg"
+            : "./assets/images/spi.jpg";
         const thumbnail = getCachedThumb(thumbPath);
 
         if (replyVariant === 2) {
@@ -889,7 +889,7 @@ async function serialize(sock, msg, store = {}) {
         },
       };
     } else if (replyVariant === 5) {
-      let troliThumbnail = getCachedThumb("./assets/images/ourin.jpg");
+      let troliThumbnail = getCachedThumb("./assets/images/spi.jpg");
 
       quotedMsg = {
         key: {
@@ -901,7 +901,7 @@ async function serialize(sock, msg, store = {}) {
           orderMessage: {
             orderId: "1337",
             thumbnail: await getCachedSharpThumb(
-              "./assets/images/ourin2.jpg",
+              "./assets/images/spi2.jpg",
               300,
               300,
             ),
@@ -913,7 +913,7 @@ async function serialize(sock, msg, store = {}) {
             sellerJid: config.bot?.number
               ? `${config.bot.number}@s.whatsapp.net`
               : m.sender,
-            token: "ourin-menu-v8",
+            token: "spi-menu-v8",
             totalAmount1000: 0,
             totalCurrencyCode: "IDR",
             contextInfo: {
@@ -956,7 +956,7 @@ async function serialize(sock, msg, store = {}) {
           fileName: config.bot.name,
           fileLength: 99999999999999,
           jpegThumbnail: await getCachedSharpThumb(
-            join(process.cwd(), "assets/images/ourin2.jpg"),
+            join(process.cwd(), "assets/images/spi2.jpg"),
             300,
             300,
           ),
@@ -1001,7 +1001,7 @@ async function serialize(sock, msg, store = {}) {
             externalAdReply: {
               title: config.bot?.name || "Si Paling Informasi",
               body: "WhatsApp Bot Multi Device",
-              thumbnail: getCachedThumb("./assets/images/ourin2.jpg"),
+              thumbnail: getCachedThumb("./assets/images/spi2.jpg"),
               mediaType: 1,
               sourceUrl: null,
               renderLargerThumbnail: false,
@@ -1031,7 +1031,7 @@ async function serialize(sock, msg, store = {}) {
             externalAdReply: {
               title: `Hallo kak ${m.pushName || "User"} 🖐`,
               body: `Bot Name: ${config.bot?.name} | runtime: ${formatUptime(uptime)}`,
-              thumbnail: getCachedThumb("./assets/images/ourin.jpg"),
+              thumbnail: getCachedThumb("./assets/images/spi.jpg"),
               mediaType: 1,
               sourceUrl: null,
               renderLargerThumbnail: true,
@@ -1061,7 +1061,7 @@ async function serialize(sock, msg, store = {}) {
             externalAdReply: {
               title: `Hallo kak ${m.pushName || "User"} 🖐`,
               body: `Bot Name: ${config.bot?.name} | runtime: ${formatUptime(uptime)}`,
-              thumbnail: getCachedThumb("./assets/images/ourin.jpg"),
+              thumbnail: getCachedThumb("./assets/images/spi.jpg"),
               mediaType: 1,
               sourceUrl: null,
               renderLargerThumbnail: true,
@@ -1085,7 +1085,7 @@ async function serialize(sock, msg, store = {}) {
       return sock.sendMessage(
         m.chat,
         {
-          video: await getCachedThumb("./assets/video/ourin.mp4"),
+          video: await getCachedThumb("./assets/video/spi.mp4"),
           caption: text,
           gifPlayback: true,
           contextInfo: {

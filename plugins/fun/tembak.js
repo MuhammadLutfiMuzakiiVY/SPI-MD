@@ -1,4 +1,4 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
@@ -36,7 +36,7 @@ const romanticQuotes = [
 
 let thumbFun = null
 try {
-    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'ourin-games.jpg')
+    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'spi-games.jpg')
     if (fs.existsSync(thumbPath)) thumbFun = fs.readFileSync(thumbPath)
 } catch (e) {}
 

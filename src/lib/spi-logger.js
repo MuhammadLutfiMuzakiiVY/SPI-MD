@@ -1,7 +1,7 @@
 import chalk from 'chalk/index.js'
 import gradient from 'gradient-string'
 import figlet from 'figlet'
-import * as timeHelper from './ourin-time.js'
+import * as timeHelper from './spi-time.js'
 const g = gradient(["#A855F7", "#06B6D4", "#10B981"])
 
 const k = {

@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { isLid, lidToJid } from '../../src/lib/ourin-lid.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { isLid, lidToJid } from '../../src/lib/spi-lid.js'
 
 const pluginConfig = {
     name: 'unmutemember',

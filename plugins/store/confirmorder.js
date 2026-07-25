@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import * as orderPoller from '../../src/lib/ourin-order-poller.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import * as orderPoller from '../../src/lib/spi-order-poller.js'
 const pluginConfig = {
     name: 'confirmorder',
     alias: ['konfirmorder', 'selesaiorder', 'doneorder'],

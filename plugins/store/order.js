@@ -1,9 +1,9 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import * as pakasir from '../../src/lib/ourin-pakasir.js'
-import * as orderPoller from '../../src/lib/ourin-order-poller.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import * as pakasir from '../../src/lib/spi-pakasir.js'
+import * as orderPoller from '../../src/lib/spi-order-poller.js'
 import QRCode from 'qrcode'
-import * as timeHelper from '../../src/lib/ourin-time.js'
-import te from '../../src/lib/ourin-error.js'
+import * as timeHelper from '../../src/lib/spi-time.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
   name: "order",
   alias: ["beli", "pesan", "buy"],

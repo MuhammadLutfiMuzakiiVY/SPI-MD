@@ -1,16 +1,16 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 /**
  * 🐍🎲 ULAR TANGGA GAME
  * Classic snake and ladder game with visual board
  *
  * Based on reference: RTXZY-MD-pro/plugins/game-ulartangga.js
- * Enhanced for OurinAI with visual board and full contextInfo
+ * Enhanced for SPIAI with visual board and full contextInfo
  */
-import { drawBoard, getRandomMap, DICE_STICKERS } from '../../src/lib/ourin-game-ulartangga.js'
+import { drawBoard, getRandomMap, DICE_STICKERS } from '../../src/lib/spi-game-ulartangga.js'
 import config from '../../config.js'
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
   name: "ulartangga",
   alias: ["ut", "snakeladder", "sl"],
@@ -44,7 +44,7 @@ try {
     process.cwd(),
     "assets",
     "images",
-    "ourin-games.jpg",
+    "spi-games.jpg",
   );
   if (fs.existsSync(thumbPath)) {
     thumbUT = fs.readFileSync(thumbPath);

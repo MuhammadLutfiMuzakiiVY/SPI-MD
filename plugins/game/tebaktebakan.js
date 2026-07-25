@@ -1,4 +1,4 @@
-import { games } from '../../src/lib/ourin-games.js'
+import { games } from '../../src/lib/spi-games.js'
 
 games.register('tebaktebakan', {
     alias: ['tbt', 'tebak2an', 'receh'],

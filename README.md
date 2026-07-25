@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/images/ourin2.jpg" alt="Si Paling Informasi Banner" width="400" style="border-radius:15px; margin-bottom: 20px;" />
+  <img src="./assets/images/spi2.jpg" alt="Si Paling Informasi Banner" width="400" style="border-radius:15px; margin-bottom: 20px;" />
   <br />
   
   <h1>✨ Si Paling Informasi✨</h1>
@@ -22,7 +22,7 @@ Buat kamu yang sedang mencari script bot WhatsApp yang ringan, punya fitur super
 > [!TIP]
 > Kami memakai pustaka **Baileys** terbaru yang memastikan bot berjalan lebih stabil untuk WhatsApp Multi-Device (bisa aktif di banyak perangkat sekaligus).
 
-## 🛒 Produk OURIN
+## 🛒 Produk SPI
 
 | Layanan            | Deskripsi                                      | Akses |
 |-------------------|-----------------------------------------------|-------|
@@ -94,8 +94,8 @@ bash install.sh
 ### 🐳 Menggunakan Docker (Tinggal Pakai)
 Buat kamu yang pakai VPS dan ogah ribet, fitur ini sangat direkomendasikan karena sudah dibundle dengan environment terbaik (Node 22 Bookworm):
 ```bash
-docker build -t ourin-md .
-docker run -d --name ourin-bot ourin-md
+docker build -t spi-md .
+docker run -d --name spi-bot spi-md
 ```
 
 ---
@@ -133,11 +133,11 @@ Setelah semuanya ter-install, jalankan perintah ini:
 npm start
 ```
 Bot nanti akan otomatis berjalan, kalau sampai disuruh pairing code
-code pairingnya **OURINNAI**
+code pairingnya **SPINAI**
 
 ### 5. Menghubungkan WhatsApp
 Saat pertama kali dijalankan, sistem bot cerdas akan meminta kamu. 
-Bot akan mengirimkan **Pairing Code** (OURINNAI). Cukup masukkan kode ini di aplikasi WhatsApp kamu `(Perangkat Tertaut -> Tautkan dengan Nomor Telepon)`, tempel kode OURINNAI di 8 kolom itu.
+Bot akan mengirimkan **Pairing Code** (SPINAI). Cukup masukkan kode ini di aplikasi WhatsApp kamu `(Perangkat Tertaut -> Tautkan dengan Nomor Telepon)`, tempel kode SPINAI di 8 kolom itu.
 
 ---
 

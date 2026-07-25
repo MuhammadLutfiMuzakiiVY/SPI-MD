@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { getRpgContextInfo } from '../../src/lib/ourin-context.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { getRpgContextInfo } from '../../src/lib/spi-context.js'
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
@@ -23,7 +23,7 @@ const EXP_PER_KOIN = 2
 
 let thumbRpg = null
 try {
-    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'ourin-rpg.jpg')
+    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'spi-rpg.jpg')
     if (fs.existsSync(thumbPath)) thumbRpg = fs.readFileSync(thumbPath)
 } catch (e) {}
 

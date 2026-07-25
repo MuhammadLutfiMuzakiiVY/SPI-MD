@@ -1,6 +1,6 @@
 
 import config from '../../config.js'
-import * as timeHelper from './ourin-time.js'
+import * as timeHelper from './spi-time.js'
 /**
  * @typedef {Object} DashboardData
  * @property {string} userName - Nama user

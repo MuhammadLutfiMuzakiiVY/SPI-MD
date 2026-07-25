@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
-import { getDatabase } from './ourin-database.js'
-import { logger } from './ourin-logger.js'
+import { getDatabase } from './spi-database.js'
+import { logger } from './spi-logger.js'
 
 const SUPPORTED_PLATFORMS = [
     'tiktok.com',

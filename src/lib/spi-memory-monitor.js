@@ -1,4 +1,4 @@
-import { logger } from "./ourin-logger.js";
+import { logger } from "./spi-logger.js";
 const RSS_LIMIT = 1024 * 1024 * 1024;
 const CHECK_INTERVAL = 5 * 60 * 1000;
 

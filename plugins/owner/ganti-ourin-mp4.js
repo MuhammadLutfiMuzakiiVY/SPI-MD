@@ -1,13 +1,13 @@
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
-    name: 'ganti-ourin.mp4',
+    name: 'ganti-spi.mp4',
     alias: ['gantiourinvideo', 'setourinvideo'],
     category: 'owner',
-    description: 'Ganti video ourin.mp4',
-    usage: '.ganti-ourin.mp4 (reply/kirim video)',
-    example: '.ganti-ourin.mp4',
+    description: 'Ganti video spi.mp4',
+    usage: '.ganti-spi.mp4 (reply/kirim video)',
+    example: '.ganti-spi.mp4',
     isOwner: true,
     isPremium: false,
     isGroup: false,
@@ -21,7 +21,7 @@ async function handler(m, { sock }) {
     const isVideo = m.type === 'videoMessage' || (m.quoted && m.quoted.type === 'videoMessage')
     
     if (!isVideo) {
-        return m.reply(`🎬 *ɢᴀɴᴛɪ ᴏᴜʀɪɴ.ᴍᴘ4*\n\n> Kirim/reply video untuk mengganti\n> File: assets/video/ourin.mp4`)
+        return m.reply(`🎬 *ɢᴀɴᴛɪ ᴏᴜʀɪɴ.ᴍᴘ4*\n\n> Kirim/reply video untuk mengganti\n> File: assets/video/spi.mp4`)
     }
     
     try {
@@ -36,7 +36,7 @@ async function handler(m, { sock }) {
             return m.reply(`❌ Gagal mendownload video`)
         }
         
-        const targetPath = path.join(process.cwd(), 'assets', 'video', 'ourin.mp4')
+        const targetPath = path.join(process.cwd(), 'assets', 'video', 'spi.mp4')
         
         const dir = path.dirname(targetPath)
         if (!fs.existsSync(dir)) {
@@ -45,7 +45,7 @@ async function handler(m, { sock }) {
         
         fs.writeFileSync(targetPath, buffer)
         
-        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Video ourin.mp4 telah diganti`)
+        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Video spi.mp4 telah diganti`)
         
     } catch (error) {
         m.reply(te(m.prefix, m.command, m.pushName))

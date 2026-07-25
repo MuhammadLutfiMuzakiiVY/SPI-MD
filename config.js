@@ -1,5 +1,5 @@
-import { getDatabase } from './src/lib/ourin-database.js';
-import * as ownerPremiumDb from './src/lib/ourin-premium-db.js';
+import { getDatabase } from './src/lib/spi-database.js';
+import * as ownerPremiumDb from './src/lib/spi-premium-db.js';
 
 //  utamakan baca object config sampai bawah
 const config = {

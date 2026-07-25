@@ -1,6 +1,6 @@
 import { performance } from 'perf_hooks'
-import { getDatabase } from '../src/lib/ourin-database.js'
-import { getAllPlugins, getCommandsByCategory, getCategories, pluginStore } from '../src/lib/ourin-plugins.js'
+import { getDatabase } from '../src/lib/spi-database.js'
+import { getAllPlugins, getCommandsByCategory, getCategories, pluginStore } from '../src/lib/spi-plugins.js'
 import config from '../config.js'
 
 function toSmallCaps(text) {
@@ -134,7 +134,7 @@ async function handleCommand(m, sock) {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363208449943317@newsletter',
-                                newsletterName: 'Ourin Case System',
+                                newsletterName: 'SPI Case System',
                                 serverMessageId: 127
                             }
                         }
@@ -216,7 +216,7 @@ async function handleCommand(m, sock) {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363208449943317@newsletter',
-                                newsletterName: 'Ourin Plugin System',
+                                newsletterName: 'SPI Plugin System',
                                 serverMessageId: 127
                             }
                         }

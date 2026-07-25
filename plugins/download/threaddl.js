@@ -2,7 +2,7 @@ import axios from 'axios'
 import * as cheerio from 'cheerio'
 import FormData from 'form-data'
 import crypto from 'crypto'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 import { generateWAMessage, generateWAMessageFromContent, jidNormalizedUser } from 'ourin'
 async function threadsdl(url) {
     const form = new FormData()

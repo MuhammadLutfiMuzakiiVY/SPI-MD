@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { getRpgContextInfo } from '../../src/lib/ourin-context.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { getRpgContextInfo } from '../../src/lib/spi-context.js'
 const pluginConfig = {
     name: 'weekly',
     alias: ['mingguan'],

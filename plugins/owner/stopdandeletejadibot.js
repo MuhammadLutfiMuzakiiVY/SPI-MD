@@ -1,5 +1,5 @@
-import { stopJadibot, getAllJadibotSessions } from '../../src/lib/ourin-jadibot-manager.js'
-import te from '../../src/lib/ourin-error.js'
+import { stopJadibot, getAllJadibotSessions } from '../../src/lib/spi-jadibot-manager.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'stopdandeletejadibot',
     alias: ['deletejadibot', 'removejadibot', 'hapusjadibot'],

@@ -2,7 +2,7 @@ import QRCode from 'qrcode'
 import path from 'path'
 import fs from 'fs'
 import { delay, DisconnectReason, jidNormalizedUser, useMultiFileAuthState } from 'ourin'
-import { logger } from './ourin-logger.js'
+import { logger } from './spi-logger.js'
 const JADIBOT_AUTH_FOLDER = path.join(process.cwd(), 'session', 'jadibot')
 const jadibotSessions = new Map()
 const reconnectAttempts = new Map()
@@ -197,8 +197,8 @@ async function startJadibot(sock, m, userJid, usePairing = true) {
             if (m && m.chat) {
                 let thumbnail = null
                 try {
-                    if (fs.existsSync('./assets/images/ourin2.jpg')) {
-                        thumbnail = fs.readFileSync('./assets/images/ourin2.jpg')
+                    if (fs.existsSync('./assets/images/spi2.jpg')) {
+                        thumbnail = fs.readFileSync('./assets/images/spi2.jpg')
                     }
                 } catch {}
 

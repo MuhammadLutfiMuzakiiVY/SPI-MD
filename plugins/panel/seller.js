@@ -1,8 +1,8 @@
 import config from '../../config.js'
 import fs from 'fs'
 import path from 'path'
-import { isLid, lidToJid } from '../../src/lib/ourin-lid.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { isLid, lidToJid } from '../../src/lib/spi-lid.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import { getGroupMode } from '../group/botmode.js'
 const pluginConfig = {
     name: 'addseller',

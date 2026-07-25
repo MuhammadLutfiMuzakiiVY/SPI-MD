@@ -1,25 +1,25 @@
 import config from "../config.js";
 import { isSelf } from "../config.js";
-import { serialize, getCachedThumb } from "./lib/ourin-serialize.js";
+import { serialize, getCachedThumb } from "./lib/spi-serialize.js";
 import {
   getPlugin,
   getPluginCount,
   getAllPlugins,
   pluginStore,
   getAllCommandNames,
-} from "./lib/ourin-plugins.js";
+} from "./lib/spi-plugins.js";
 import {
   findSimilarCommands,
   formatSuggestionMessage,
-} from "./lib/ourin-similarity.js";
-import { getDatabase } from "./lib/ourin-database.js";
+} from "./lib/spi-similarity.js";
+import { getDatabase } from "./lib/spi-database.js";
 import {
   formatUptime,
   createWaitMessage,
   createErrorMessage,
-} from "./lib/ourin-formatter.js";
+} from "./lib/spi-formatter.js";
 import { getUptime } from "./connection.js";
-import { logger, logMessage, c } from "./lib/ourin-logger.js";
+import { logger, logMessage, c } from "./lib/spi-logger.js";
 import {
   isLid,
   isLidConverted,
@@ -27,14 +27,14 @@ import {
   convertLidArray,
   resolveAnyLidToJid,
   cacheParticipantLids,
-} from "./lib/ourin-lid.js";
-import { hasActiveSession, getSession } from "./lib/ourin-game-data.js";
+} from "./lib/spi-lid.js";
+import { hasActiveSession, getSession } from "./lib/spi-game-data.js";
 import {
   levenshtein,
   formatAfkDuration,
   checkPermission,
   checkMode,
-} from "./lib/ourin-middleware.js";
+} from "./lib/spi-middleware.js";
 import {
   handleAntilink,
   handleAntiRemove,
@@ -42,27 +42,27 @@ import {
   handleAntilinkGc,
   handleAntilinkAll,
   handleAntiHidetag,
-} from "./lib/ourin-group-protection.js";
+} from "./lib/spi-group-protection.js";
 import {
   debounceMessage,
   getCachedUser,
   getCachedGroup,
   getCachedSetting,
-} from "./lib/ourin-performance.js";
+} from "./lib/spi-performance.js";
 import {
   isJadibotOwner,
   isJadibotPremium,
   loadJadibotDb,
-} from "./lib/ourin-jadibot-database.js";
-import { getActiveJadibots } from "./lib/ourin-jadibot-manager.js";
+} from "./lib/spi-jadibot-database.js";
+import { getActiveJadibots } from "./lib/spi-jadibot-manager.js";
 import { handleCommand as handleCaseCommand } from "../case/ourin.js";
 import { RateLimiterMemory } from "rate-limiter-flexible";
-import { games as ourinGames } from "./lib/ourin-games.js";
+import { games as ourinGames } from "./lib/spi-games.js";
 import fs from "fs";
 import path from "path";
 import { exec } from "child_process";
 import axios from "axios";
-import * as timeHelper from "./lib/ourin-time.js";
+import * as timeHelper from "./lib/spi-time.js";
 const safe = (fn) => {
   try {
     return fn();
@@ -98,7 +98,7 @@ try {
   FormData = (await import("form-data")).default || (await import("form-data"));
 } catch {}
 try {
-  levelHelper = await import("./lib/ourin-level.js");
+  levelHelper = await import("./lib/spi-level.js");
 } catch {}
 try {
   handleBuyerDone = (await import("../plugins/store/done.js")).handleBuyerDone;
@@ -149,14 +149,14 @@ try {
   sulapPlugin = await import("../plugins/fun/sulap.js");
 } catch {}
 try {
-  handleAutoAI = (await import("./lib/ourin-auto-ai.js")).handleAutoAI;
+  handleAutoAI = (await import("./lib/spi-auto-ai.js")).handleAutoAI;
 } catch {}
 try {
-  handleAutoDownload = (await import("./lib/ourin-auto-download.js"))
+  handleAutoDownload = (await import("./lib/spi-auto-download.js"))
     .handleAutoDownload;
 } catch {}
 try {
-  checkStickerCommand = (await import("./lib/ourin-sticker-command.js"))
+  checkStickerCommand = (await import("./lib/spi-sticker-command.js"))
     .checkStickerCommand;
 } catch {}
 try {
@@ -210,7 +210,7 @@ let _smartTriggerThumb = undefined;
 function getSmartTriggerThumb() {
   if (_smartTriggerThumb !== undefined) return _smartTriggerThumb;
   try {
-    const p = "./assets/images/ourin2.jpg";
+    const p = "./assets/images/spi2.jpg";
     _smartTriggerThumb = fs.existsSync(p) ? fs.readFileSync(p) : null;
   } catch {
     _smartTriggerThumb = null;
@@ -847,7 +847,7 @@ async function messageHandler(msg, sock, options = {}) {
                 const commandArgs = words.slice(1).join(" ");
                 m.body = `${prefix}${bestMatch}${commandArgs ? " " + commandArgs : ""}`;
                 const { parseCommand } =
-                  await import("./lib/ourin-serialize.js");
+                  await import("./lib/spi-serialize.js");
                 const parsed = parseCommand(m.body, prefix);
                 m.isCommand = parsed.isCommand;
                 m.command = parsed.command;
@@ -1189,7 +1189,7 @@ async function messageHandler(msg, sock, options = {}) {
               interactiveMessage: {
                 title: message.message,
                 footer: `Mungkin maksud kamu adalah command ini`,
-                document: getCachedThumb("./assets/images/ourin.jpg"),
+                document: getCachedThumb("./assets/images/spi.jpg"),
                 mimetype: "application/pdf",
                 fileName: "Did you mean",
                 fileLength: 999999999999,
@@ -1606,7 +1606,7 @@ async function groupHandler(update, sock) {
         if (!groupHandler._promoteImg) {
           try {
             groupHandler._promoteImg = fs.readFileSync(
-              "./assets/images/ourin-promote.jpg",
+              "./assets/images/spi-promote.jpg",
             );
           } catch {
             groupHandler._promoteImg = null;
@@ -1644,7 +1644,7 @@ async function groupHandler(update, sock) {
         if (!groupHandler._demoteImg) {
           try {
             groupHandler._demoteImg = fs.readFileSync(
-              "./assets/images/ourin-demote.jpg",
+              "./assets/images/spi-demote.jpg",
             );
           } catch {
             groupHandler._demoteImg = null;

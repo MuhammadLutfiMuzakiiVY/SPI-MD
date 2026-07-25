@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || 'Milik-Bot-Si Paling Informasi'
 
 const pluginConfig = {
@@ -21,7 +21,7 @@ const STYLES = ['apple', 'google', 'microsoft', 'samsung', 'whatsapp', 'twitter'
 
 let thumbTools = null
 try {
-    const p = path.join(process.cwd(), 'assets/images/ourin-tools.jpg')
+    const p = path.join(process.cwd(), 'assets/images/spi-tools.jpg')
     if (fs.existsSync(p)) thumbTools = fs.readFileSync(p)
 } catch {}
 

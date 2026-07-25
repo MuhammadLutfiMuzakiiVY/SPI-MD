@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { findParticipantByNumber, getParticipantJid } from '../../src/lib/ourin-lid.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { findParticipantByNumber, getParticipantJid } from '../../src/lib/spi-lid.js'
 import config from '../../config.js'
 const pluginConfig = {
     name: ['antibot', 'botdetect'],

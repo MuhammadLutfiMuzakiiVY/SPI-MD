@@ -1,4 +1,4 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import fs from 'fs'
 const pluginConfig = {
     name: 'delsewa',
@@ -83,7 +83,7 @@ async function handler(m, { sock }) {
                         mediaType: 1,
                         title: 'SEWA DIHAPUS',
                         body: 'Grup dihapus dari whitelist',
-                        thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                        thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                         renderLargerThumbnail: true
                     }
                 }

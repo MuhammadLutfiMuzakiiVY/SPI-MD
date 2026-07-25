@@ -1,11 +1,11 @@
 import axios from 'axios'
 import crypto from 'crypto'
 import config from '../../config.js'
-import { isLid, lidToJid } from '../../src/lib/ourin-lid.js'
-import { checkPanelJeda, setPanelLastUsed } from '../../src/lib/ourin-panel-jeda.js'
-import { hasAccessToServer, getUserRole, VALID_SERVERS } from '../../src/lib/ourin-roles-cpanel.js'
+import { isLid, lidToJid } from '../../src/lib/spi-lid.js'
+import { checkPanelJeda, setPanelLastUsed } from '../../src/lib/spi-panel-jeda.js'
+import { hasAccessToServer, getUserRole, VALID_SERVERS } from '../../src/lib/spi-roles-cpanel.js'
 import { isGcSeller } from './gcseller.js'
-import * as timeHelper from '../../src/lib/ourin-time.js'
+import * as timeHelper from '../../src/lib/spi-time.js'
 import fs from 'fs'
 const RAM_OPTIONS = [
   "1gb",
@@ -329,7 +329,7 @@ async function handler(m, { sock }) {
     detailTxt += `⚠️ Simpan data ini, jangan bagikan ke siapapun!`;
 
     await sock.sendMessage(targetUser, {
-      image: fs.readFileSync("./assets/images/ourin-v8.jpg"),
+      image: fs.readFileSync("./assets/images/spi-v8.jpg"),
       caption: detailTxt,
       contextInfo: {
         mentionedJid: [targetUser],

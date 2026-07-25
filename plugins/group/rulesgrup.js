@@ -1,5 +1,5 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import fs from 'fs'
 import path from 'path'
 const pluginConfig = {
@@ -37,7 +37,7 @@ async function handler(m, { sock, config: botConfig }) {
     const customRules = groupData.groupRules
     const rulesText = customRules || DEFAULT_GROUP_RULES
 
-    const imagePath = path.join(process.cwd(), 'assets', 'images', 'ourin-rules.jpg')
+    const imagePath = path.join(process.cwd(), 'assets', 'images', 'spi-rules.jpg')
     let imageBuffer = fs.existsSync(imagePath) ? fs.readFileSync(imagePath) : null
 
     const saluranId = botConfig.saluran?.id || '120363208449943317@newsletter'

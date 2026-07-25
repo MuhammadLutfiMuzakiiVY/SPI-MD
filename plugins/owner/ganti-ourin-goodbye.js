@@ -1,13 +1,13 @@
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
-    name: 'ganti-ourin-goodbye.jpg',
+    name: 'ganti-spi-goodbye.jpg',
     alias: ['gantigoodbye', 'setouringoodbye'],
     category: 'owner',
-    description: 'Ganti gambar ourin-goodbye.jpg (thumbnail goodbye)',
-    usage: '.ganti-ourin-goodbye.jpg (reply/kirim gambar)',
-    example: '.ganti-ourin-goodbye.jpg',
+    description: 'Ganti gambar spi-goodbye.jpg (thumbnail goodbye)',
+    usage: '.ganti-spi-goodbye.jpg (reply/kirim gambar)',
+    example: '.ganti-spi-goodbye.jpg',
     isOwner: true,
     isPremium: false,
     isGroup: false,
@@ -21,7 +21,7 @@ async function handler(m, { sock }) {
     const isImage = m.isImage || (m.quoted && m.quoted.type === 'imageMessage')
     
     if (!isImage) {
-        return m.reply(`🖼️ *ɢᴀɴᴛɪ ᴏᴜʀɪɴ-ɢᴏᴏᴅʙʏᴇ.ᴊᴘɢ*\n\n> Kirim/reply gambar untuk mengganti\n> File: assets/images/ourin-goodbye.jpg`)
+        return m.reply(`🖼️ *ɢᴀɴᴛɪ ᴏᴜʀɪɴ-ɢᴏᴏᴅʙʏᴇ.ᴊᴘɢ*\n\n> Kirim/reply gambar untuk mengganti\n> File: assets/images/spi-goodbye.jpg`)
     }
     
     try {
@@ -36,7 +36,7 @@ async function handler(m, { sock }) {
             return m.reply(`❌ Gagal mendownload gambar`)
         }
         
-        const targetPath = path.join(process.cwd(), 'assets', 'images', 'ourin-goodbye.jpg')
+        const targetPath = path.join(process.cwd(), 'assets', 'images', 'spi-goodbye.jpg')
         
         const dir = path.dirname(targetPath)
         if (!fs.existsSync(dir)) {
@@ -45,7 +45,7 @@ async function handler(m, { sock }) {
         
         fs.writeFileSync(targetPath, buffer)
         
-        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Gambar ourin-goodbye.jpg telah diganti`)
+        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Gambar spi-goodbye.jpg telah diganti`)
         
     } catch (error) {
         m.reply(te(m.prefix, m.command, m.pushName))

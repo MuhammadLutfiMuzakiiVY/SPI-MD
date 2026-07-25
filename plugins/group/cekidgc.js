@@ -1,7 +1,7 @@
 import config from '../../config.js'
 import axios from 'axios'
 import { generateWAMessageFromContent, proto } from 'ourin'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 
 const pluginConfig = {
     name: 'cekidgc',

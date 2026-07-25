@@ -9,8 +9,8 @@ import config from '../../config.js'
 import { wrapper } from 'axios-cookiejar-support'
 import { CookieJar } from 'tough-cookie'
 import * as cheerio from 'cheerio'
-import { f } from '../../src/lib/ourin-http.js'
-import te from '../../src/lib/ourin-error.js'
+import { f } from '../../src/lib/spi-http.js'
+import te from '../../src/lib/spi-error.js'
 const execAsync = promisify(exec)
 
 const pluginConfig = {

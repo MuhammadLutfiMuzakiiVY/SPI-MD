@@ -5,7 +5,7 @@ import { exec } from 'child_process'
 import { promisify } from 'util'
 import { downloadMediaMessage } from 'ourin'
 import config from '../../config.js'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 
 const run = promisify(exec)
 

@@ -19,7 +19,7 @@ async function handler(m, { sock }) {
     const prompt = m.args.join(' ')
     if (!prompt) {
         return m.reply(
-            `🍌 *OURIN BANANA SUPER*\n\n` +
+            `🍌 *SPI BANANA SUPER*\n\n` +
             `> Edit gambar dengan AI\n\n` +
             `\`Contoh: ${m.prefix}ourinbanana make it anime style\`\n\n` +
             `> Reply atau kirim gambar dengan caption`

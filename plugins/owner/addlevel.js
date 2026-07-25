@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { calculateLevel, getRole } from './../../src/lib/ourin-level.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { calculateLevel, getRole } from './../../src/lib/spi-level.js'
 const pluginConfig = {
     name: 'addlevel',
     alias: ['tambahlevel', 'givelevel', 'addlvl'],
@@ -55,7 +55,7 @@ async function handler(m, { sock }) {
     const oldLevel = calculateLevel(user.exp || 0)
     const expToAdd = levels * 20000
     
-    const { default: levelHelper } = await import('../../src/lib/ourin-level.js')
+    const { default: levelHelper } = await import('../../src/lib/spi-level.js')
     const addResult = await levelHelper.addExpWithLevelCheck(sock, m, db, user, expToAdd)
     
     m.react('✅')

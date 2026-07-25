@@ -20,12 +20,12 @@ import {
   isLidConverted,
   resolveAnyLidToJid,
   getCachedJid,
-} from "./ourin-lid.js";
+} from "./spi-lid.js";
 
 import fs from "fs";
 import path from "path";
 import { downloadMediaMessage, getContentType } from "ourin";
-import { addExifToWebp, DEFAULT_METADATA } from "./ourin-exif.js";
+import { addExifToWebp, DEFAULT_METADATA } from "./spi-exif.js";
 import ffmpegInstaller from "@ffmpeg-installer/ffmpeg";
 import ffmpeg from "fluent-ffmpeg";
 ffmpeg.setFfmpegPath(ffmpegInstaller.path);
@@ -34,7 +34,7 @@ import mime from "mime-types";
 import {
   getProfilePicture,
   getProfileBuffer,
-} from "./ourin-profile-picture.js";
+} from "./spi-profile-picture.js";
 
 function getTempDir() {
   const tmpDir = path.join(process.cwd(), "tmp");

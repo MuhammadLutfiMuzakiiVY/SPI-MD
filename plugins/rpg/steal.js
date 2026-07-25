@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { addExpWithLevelCheck } from '../../src/lib/ourin-level.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { addExpWithLevelCheck } from '../../src/lib/spi-level.js'
 const pluginConfig = {
     name: 'steal',
     alias: ['mencuri', 'curi', 'pickpocket'],

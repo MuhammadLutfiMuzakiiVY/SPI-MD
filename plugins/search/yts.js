@@ -1,5 +1,5 @@
 import yts from 'yt-search'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'yts',
     alias: ['ytsearch', 'youtubesearch'],

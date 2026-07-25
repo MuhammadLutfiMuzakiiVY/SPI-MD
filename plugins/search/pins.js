@@ -2,8 +2,8 @@ import { pinterest } from 'btch-downloader'
 import { generateWAMessage, generateWAMessageFromContent, jidNormalizedUser } from 'ourin'
 import axios from 'axios'
 import crypto from 'crypto'
-import te from '../../src/lib/ourin-error.js'
-import { f } from '../../src/lib/ourin-http.js'
+import te from '../../src/lib/spi-error.js'
+import { f } from '../../src/lib/spi-http.js'
 const pluginConfig = {
     name: 'pins',
     alias: ['pinsearch', 'pinterestsearch'],

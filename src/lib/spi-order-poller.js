@@ -1,6 +1,6 @@
-import { getDatabase } from './ourin-database.js'
-import { logger } from './ourin-logger.js'
-import * as pakasir from './ourin-pakasir.js'
+import { getDatabase } from './spi-database.js'
+import { logger } from './spi-logger.js'
+import * as pakasir from './spi-pakasir.js'
 let pollerInterval = null
 let sock = null
 

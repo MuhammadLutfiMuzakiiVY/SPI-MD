@@ -1,5 +1,5 @@
 import { Client } from 'ssh2'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: ['uinstalltema', 'uninstalltema', 'removetema', 'hapustema'],
     alias: [],

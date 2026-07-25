@@ -1,8 +1,8 @@
-import { getDatabase } from './ourin-database.js'
-import { logger } from './ourin-logger.js'
+import { getDatabase } from './spi-database.js'
+import { logger } from './spi-logger.js'
 import config from '../../config.js'
-import * as timeHelper from './ourin-time.js'
-import { getTodaySchedule, extractPrayerTimes } from './ourin-sholat-api.js'
+import * as timeHelper from './spi-time.js'
+import { getTodaySchedule, extractPrayerTimes } from './spi-sholat-api.js'
 const SHOLAT_MESSAGES = {
     imsak: '🌙 *WAKTU IMSAK*\n\n> Hai Sahabat, waktu Imsak telah tiba.\n> Segera makan sahur sebelum waktu habis.',
     subuh: '🌅 *WAKTU SUBUH*\n\n> Hai Sahabat, waktu Sholat Subuh telah tiba.\n> Ambilah air wudhu dan segeralah sholat.',

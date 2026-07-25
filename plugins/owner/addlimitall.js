@@ -1,6 +1,6 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import te from '../../src/lib/ourin-error.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'addenergiall',
     alias: ['addenergianall', 'bonusenergiall'],

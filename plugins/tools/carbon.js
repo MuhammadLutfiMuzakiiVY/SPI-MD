@@ -1,5 +1,5 @@
-import { generateCarbon } from '../../src/lib/ourin-carbon.js'
-import te from '../../src/lib/ourin-error.js'
+import { generateCarbon } from '../../src/lib/spi-carbon.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: ['carbon', 'carbonify', 'carboncode'],
     alias: [],

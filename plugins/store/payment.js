@@ -64,20 +64,20 @@ async function handler(m, { sock }) {
             await sock.sendMessage(m.chat, {
                 image: qrisBuffer,
                 caption: txt,
-                footer: config.bot?.name || 'Ourin Store',
+                footer: config.bot?.name || 'SPI Store',
                 interactiveButtons: copyButtons
             }, { quoted: m })
         } catch (e) {
             await sock.sendMessage(m.chat, {
                 text: txt,
-                footer: config.bot?.name || 'Ourin Store',
+                footer: config.bot?.name || 'SPI Store',
                 interactiveButtons: copyButtons
             }, { quoted: m })
         }
     } else {
         await sock.sendMessage(m.chat, {
             text: txt,
-            footer: config.bot?.name || 'Ourin Store',
+            footer: config.bot?.name || 'SPI Store',
             interactiveButtons: copyButtons
         }, { quoted: m })
     }

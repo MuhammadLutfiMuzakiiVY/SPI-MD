@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import * as orderPoller from '../../src/lib/ourin-order-poller.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import * as orderPoller from '../../src/lib/spi-order-poller.js'
 const pluginConfig = {
     name: 'myorder',
     alias: ['orderku', 'cekorder', 'pesananku'],
@@ -21,7 +21,7 @@ async function handler(m, { sock }) {
     const groupData = db.getGroup(m.chat) || {}
     const { default: path } = await import('path')
     const { default: fs } = await import('fs')
-    const storeImage = path.join(process.cwd(), 'assets', 'images', 'ourin-store.jpg')
+    const storeImage = path.join(process.cwd(), 'assets', 'images', 'spi-store.jpg')
     
     const gMode = groupData.botMode || db.setting('botMode') || 'md'
     if (gMode !== 'store' && gMode !== 'all') {

@@ -21,7 +21,7 @@ if (!global.kudetaWhitelist) global.kudetaWhitelist = {}
 
 let thumbOwner = null
 try {
-    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'ourin-owner.jpg')
+    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'spi-owner.jpg')
     if (fs.existsSync(thumbPath)) thumbOwner = fs.readFileSync(thumbPath)
 } catch (e) {}
 

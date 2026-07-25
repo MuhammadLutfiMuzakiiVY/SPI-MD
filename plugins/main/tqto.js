@@ -24,10 +24,10 @@ async function handler(m, { sock }) {
     
     const credits = [
         { name: 'hyuuOkkotsuX', role: 'Lead Staff', icon: '👨‍💻' },
-        { name: 'Muhammad Lutfi Muzaki', role: 'Creator Si Paling Informasi dan APK Stardem Ourin', icon: '👨‍💻' },
+        { name: 'Muhammad Lutfi Muzaki', role: 'Creator Si Paling Informasi dan APK Stardem SPI', icon: '👨‍💻' },
         { name: 'SenzOkkotsu', role: 'Asisstant Developer', icon: '👨‍💻' },
         { name: 'Ell', role: 'Asisstant Developer', icon: '👨‍💻' },
-        { name: 'Aqell', role: 'Developer SC BUG Ourin Glitch', icon: '👨‍💻' },
+        { name: 'Aqell', role: 'Developer SC BUG SPI Glitch', icon: '👨‍💻' },
         { name: 'Mobbc', role: 'Staff', icon: '👨‍💻' },
         { name: 'Sanxz', role: 'Tangan Kanan', icon: '👨‍💻' },
         { name: 'Dinz', role: 'Tangan Kanan', icon: '👨‍💻' },
@@ -79,7 +79,7 @@ async function handler(m, { sock }) {
     const headers = ['No', 'Nama', 'Role / Tier']
     const rows = credits.map((c, i) => [i + 1, c.name, c.role])
     
-    await sock.sendTable(m.chat, "OURIN TEAM", headers, rows, m, { 
+    await sock.sendTable(m.chat, "SPI TEAM", headers, rows, m, { 
         headerText: `${config.bot?.name}\n\n- Dibawah ini adalah list orang yang sudah membantu kami dalam pembuatan layanan ini dan sudah men support kami\n`, 
         footer: '\n*Terima kasih yak sudah mendukung kami sampai sejauh ini :b*' 
     })

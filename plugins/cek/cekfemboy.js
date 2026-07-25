@@ -1,6 +1,6 @@
 import cekfemboy from '../../src/scraper/lufemboy.js'
-import { fetchBuffer } from '../../src/lib/ourin-utils.js'
-import te from '../../src/lib/ourin-error.js'
+import { fetchBuffer } from '../../src/lib/spi-utils.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'cekfemboy',
     alias: ['femboy'],

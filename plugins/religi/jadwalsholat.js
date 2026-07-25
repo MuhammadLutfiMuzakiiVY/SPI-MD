@@ -1,8 +1,8 @@
 import moment from 'moment-timezone'
 import config from '../../config.js'
 import fs from 'fs'
-import { searchKota, getTodaySchedule, extractPrayerTimes } from '../../src/lib/ourin-sholat-api.js'
-import te from '../../src/lib/ourin-error.js'
+import { searchKota, getTodaySchedule, extractPrayerTimes } from '../../src/lib/spi-sholat-api.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'jadwalsholat',
     alias: ['sholat', 'prayertime', 'jadwalsolat', 'waktusolat', 'waktusholat'],
@@ -43,8 +43,8 @@ async function handler(m, { sock }) {
 
         let thumbnail = null;
         try {
-            if (fs.existsSync('./assets/images/ourin.jpg')) {
-                thumbnail = fs.readFileSync('./assets/images/ourin.jpg');
+            if (fs.existsSync('./assets/images/spi.jpg')) {
+                thumbnail = fs.readFileSync('./assets/images/spi.jpg');
             }
         } catch {}
 

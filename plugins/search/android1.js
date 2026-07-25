@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import te from '../../src/lib/ourin-error.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'android1',
     alias: ['an1'],
@@ -80,7 +80,7 @@ async function handler(m, { sock }) {
         }))
         
         m.react('✅')
-        await sock.sendButton(m.chat, await import('fs').readFileSync('./assets/images/ourin.jpg'), caption, m, {
+        await sock.sendButton(m.chat, await import('fs').readFileSync('./assets/images/spi.jpg'), caption, m, {
             buttons: [{
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({

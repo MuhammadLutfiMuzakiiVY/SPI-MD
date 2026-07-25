@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { logger } from './ourin-logger.js'
+import { logger } from './spi-logger.js'
 const CLEAN_INTERVAL = 30 * 60 * 1000
 const TEMP_DIRS = ['temp', 'tmp']
 

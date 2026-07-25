@@ -6,7 +6,7 @@ async function getTesseract() {
   if (!_tesseract) _tesseract = await import("tesseract.js");
   return _tesseract;
 }
-import te from "../../src/lib/ourin-error.js";
+import te from "../../src/lib/spi-error.js";
 const pluginConfig = {
   name: "ocr",
   alias: ["totext", "imagetotext", "readtext"],
@@ -29,7 +29,7 @@ try {
     process.cwd(),
     "assets",
     "images",
-    "ourin-games.jpg",
+    "spi-games.jpg",
   );
   if (fs.existsSync(thumbPath)) thumbTools = fs.readFileSync(thumbPath);
 } catch (e) {}

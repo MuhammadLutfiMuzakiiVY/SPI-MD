@@ -1,8 +1,8 @@
 import axios from 'axios'
 import config from '../../config.js'
-import { isLid, lidToJid } from '../../src/lib/ourin-lid.js'
-import { hasFullAccess, getUserRole, VALID_SERVERS } from '../../src/lib/ourin-roles-cpanel.js'
-import te from '../../src/lib/ourin-error.js'
+import { isLid, lidToJid } from '../../src/lib/spi-lid.js'
+import { hasFullAccess, getUserRole, VALID_SERVERS } from '../../src/lib/spi-roles-cpanel.js'
+import te from '../../src/lib/spi-error.js'
 const allCommands = VALID_SERVERS.map(v => `listserver${v}`)
 const allAliases = VALID_SERVERS.map(v => `servers${v}`)
 

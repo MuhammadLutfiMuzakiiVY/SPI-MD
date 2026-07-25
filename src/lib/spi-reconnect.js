@@ -11,13 +11,13 @@
  * JANGAN HAPUS/GANTI CREDITS & THANKS TO
  * JANGAN DIJUAL YA MEK
  * 
- * Saluran Resmi Ourin:
+ * Saluran Resmi SPI:
  * https://whatsapp.com/channel/0029VbB37bgBfxoAmAlsgE0t 
  */
 
 import fs from 'fs'
 import path from 'path'
-import { logger } from './ourin-logger.js'
+import { logger } from './spi-logger.js'
 const RECONNECT_CONFIG = {
     maxAttempts: 10,
     initialDelay: 3000,

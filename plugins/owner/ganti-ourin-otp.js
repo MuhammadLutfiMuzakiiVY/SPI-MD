@@ -1,13 +1,13 @@
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
-    name: 'ganti-ourin-otp.jpg',
+    name: 'ganti-spi-otp.jpg',
     alias: ['gantiourinotp', 'setourinotp'],
     category: 'owner',
-    description: 'Ganti gambar ourin-otp.jpg',
-    usage: '.ganti-ourin-otp.jpg (reply/kirim gambar)',
-    example: '.ganti-ourin-otp.jpg',
+    description: 'Ganti gambar spi-otp.jpg',
+    usage: '.ganti-spi-otp.jpg (reply/kirim gambar)',
+    example: '.ganti-spi-otp.jpg',
     isOwner: true,
     isPremium: false,
     isGroup: false,
@@ -19,13 +19,13 @@ const pluginConfig = {
 
 async function handler(m, { sock }) {
     const isImage = m.isImage || (m.quoted && m.quoted.type === 'imageMessage')
-    if (!isImage) return m.reply(`🖼️ *ɢᴀɴᴛɪ OURIN-OTP.JPG*\n\n> Kirim/reply gambar untuk mengganti\n> File: assets/images/ourin-otp.jpg`)
+    if (!isImage) return m.reply(`🖼️ *ɢᴀɴᴛɪ SPI-OTP.JPG*\n\n> Kirim/reply gambar untuk mengganti\n> File: assets/images/spi-otp.jpg`)
     try {
         let buffer = m.quoted && m.quoted.isMedia ? await m.quoted.download() : await m.download()
         if (!buffer) return m.reply('❌ Gagal mendownload gambar')
-        const targetPath = path.join(process.cwd(), 'assets', 'images', 'ourin-otp.jpg')
+        const targetPath = path.join(process.cwd(), 'assets', 'images', 'spi-otp.jpg')
         fs.writeFileSync(targetPath, buffer)
-        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Gambar ourin-otp.jpg telah diganti`)
+        m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Gambar spi-otp.jpg telah diganti`)
     } catch (error) {
         m.reply(te(m.prefix, m.command, m.pushName))
     }

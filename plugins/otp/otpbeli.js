@@ -1,6 +1,6 @@
-import * as jasaotp from '../../src/lib/ourin-otp-service.js'
-import * as pakasir from '../../src/lib/ourin-pakasir.js'
-import * as otpPoller from '../../src/lib/ourin-otp-poller.js'
+import * as jasaotp from '../../src/lib/spi-otp-service.js'
+import * as pakasir from '../../src/lib/spi-pakasir.js'
+import * as otpPoller from '../../src/lib/spi-otp-poller.js'
 import config from '../../config.js'
 import QRCode from 'qrcode'
 import fs from 'fs'
@@ -22,7 +22,7 @@ const pluginConfig = {
 }
 
 async function handler(m, { sock }) {
-    const { getDatabase } = await import('../../src/lib/ourin-database.js')
+    const { getDatabase } = await import('../../src/lib/spi-database.js')
     const db = getDatabase()
     const groupData = db.getGroup(m.chat) || {}
 
@@ -202,7 +202,7 @@ async function handler(m, { sock }) {
         } else {
             invoiceTxt += `\n\n📝 *ɴᴏᴍᴏʀ ᴠᴀ:* \`${payment.payment_number}\``
 
-            const otpImage = path.join(process.cwd(), 'assets', 'images', 'ourin-otp.jpg')
+            const otpImage = path.join(process.cwd(), 'assets', 'images', 'spi-otp.jpg')
             let imageBuffer = null
             if (fs.existsSync(otpImage)) imageBuffer = fs.readFileSync(otpImage)
 

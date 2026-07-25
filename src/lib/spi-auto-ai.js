@@ -1,5 +1,5 @@
 import * as geminiVision from '../scraper/geminiVision.js'
-import { getDatabase } from './ourin-database.js'
+import { getDatabase } from './spi-database.js'
 import { pinterest } from 'btch-downloader'
 import config from '../../config.js'
 import axios from 'axios'
@@ -611,7 +611,7 @@ async function handleAutoAI(m, sock) {
         contextParts.push(userMessage || '(gambar tanpa teks)')
 
         const fullMessage = contextParts.join('\n')
-        const identityInstruction = `Identitas Anda adalah "Layanan Otomatis SPI". Ingat, Anda BUKAN "bot" dan BUKAN "Ourin", melainkan "Layanan Otomatis SPI". Jawab dengan gaya Layanan Otomatis SPI yang profesional, ramah, dan membantu.`
+        const identityInstruction = `Identitas Anda adalah "Layanan Otomatis SPI". Ingat, Anda BUKAN "bot" dan BUKAN "SPI", melainkan "Layanan Otomatis SPI". Jawab dengan gaya Layanan Otomatis SPI yang profesional, ramah, dan membantu.`
         const fullInstruction = identityInstruction + '\n\n' + autoai.instruction + '\n\n' + SYSTEM_PROMPT_ACTIONS
 
         saveToHistory(autoai, senderNumber, 'user', userMessage || '[gambar]')

@@ -1,9 +1,9 @@
-import { getRandomItem, createSession, getSession, endSession, checkAnswerAdvanced, getHint, hasActiveSession, setSessionTimer, getRemainingTime, formatRemainingTime, isSurrender, isReplyToGame, getRandomReward, getProgressiveHint } from './ourin-game-data.js'
-import { getDatabase } from './ourin-database.js'
-import { addExpWithLevelCheck } from './ourin-level.js'
-import { getGameContextInfo, checkFastAnswer } from './ourin-context.js'
+import { getRandomItem, createSession, getSession, endSession, checkAnswerAdvanced, getHint, hasActiveSession, setSessionTimer, getRemainingTime, formatRemainingTime, isSurrender, isReplyToGame, getRandomReward, getProgressiveHint } from './spi-game-data.js'
+import { getDatabase } from './spi-database.js'
+import { addExpWithLevelCheck } from './spi-level.js'
+import { getGameContextInfo, checkFastAnswer } from './spi-context.js'
 let fetchBuffer
-try { fetchBuffer = (await import('./ourin-utils.js')).fetchBuffer } catch {}
+try { fetchBuffer = (await import('./spi-utils.js')).fetchBuffer } catch {}
 
 const WIN_MESSAGES = [
     '🌟 *GG WP! Otakmu encer!*',
@@ -28,7 +28,7 @@ const SURRENDER_MESSAGES = [
 
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)] }
 
-class OurinGames {
+class SPIGames {
     constructor() {
         this.registry = new Map()
     }
@@ -273,6 +273,6 @@ class OurinGames {
     }
 }
 
-const games = new OurinGames()
+const games = new SPIGames()
 
-export { OurinGames, games }
+export { SPIGames, games }

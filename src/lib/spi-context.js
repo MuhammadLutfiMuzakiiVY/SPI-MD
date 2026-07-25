@@ -6,9 +6,9 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const assetsPath = path.join(__dirname, '../../assets/images')
 
-const gameThumbPath = path.join(assetsPath, 'ourin-games.jpg')
-const rpgThumbPath = path.join(assetsPath, 'ourin-rpg.jpg')
-const winnerThumbPath = path.join(assetsPath, 'ourin-winner.jpg')
+const gameThumbPath = path.join(assetsPath, 'spi-games.jpg')
+const rpgThumbPath = path.join(assetsPath, 'spi-rpg.jpg')
+const winnerThumbPath = path.join(assetsPath, 'spi-winner.jpg')
 
 let gameThumbBuffer = null
 let rpgThumbBuffer = null

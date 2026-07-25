@@ -2,7 +2,7 @@ import { fileTypeFromBuffer } from 'file-type'
 import fs from 'fs'
 import path from 'path'
 import { config } from '../../config.js'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const botConfig = config
 
 const pluginConfig = {
@@ -196,7 +196,7 @@ async function handler(m, { sock, db }) {
         
         let thumbnail = null
         try {
-            thumbnail = fs.readFileSync('./assets/images/ourin2.jpg')
+            thumbnail = fs.readFileSync('./assets/images/spi2.jpg')
         } catch (e) {}
         
         await sock.sendMessage(m.chat, {

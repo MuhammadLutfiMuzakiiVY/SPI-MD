@@ -1,5 +1,5 @@
-import { f } from '../../src/lib/ourin-http.js'
-import te from '../../src/lib/ourin-error.js'
+import { f } from '../../src/lib/spi-http.js'
+import te from '../../src/lib/spi-error.js'
 import axios from 'axios'
 import config from '../../config.js'
 const pluginConfig = {

@@ -1,5 +1,5 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 const pluginConfig = {
     name: 'setwelcometype',
     alias: ['welcometype', 'welcomevariant', 'welcomestyle'],
@@ -54,7 +54,7 @@ async function handler(m, { sock, db }) {
         })
     }
     const { default: fs } = await import('fs')
-    await sock.sendButton(m.chat, fs.readFileSync('./assets/images/ourin.jpg'), `🥗 *TIPE WELCOME*\n\Tipe saat ini adalah versi *${current}*\n_${VARIANTS[current].name}_\n\nSilahkan pilih variant welcome:`, m, { buttons })
+    await sock.sendButton(m.chat, fs.readFileSync('./assets/images/spi.jpg'), `🥗 *TIPE WELCOME*\n\Tipe saat ini adalah versi *${current}*\n_${VARIANTS[current].name}_\n\nSilahkan pilih variant welcome:`, m, { buttons })
 }
 
 export { pluginConfig as config, handler }

@@ -1,5 +1,5 @@
-import { getParticipantJids } from '../../src/lib/ourin-lid.js'
-import te from '../../src/lib/ourin-error.js'
+import { getParticipantJids } from '../../src/lib/spi-lid.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: ['htpremium', 'hidetagpremium', 'htprem'],
     category: 'group',

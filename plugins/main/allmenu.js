@@ -2,15 +2,15 @@ import config from "../../config.js";
 import {
   formatUptime,
   getTimeGreeting,
-} from "../../src/lib/ourin-formatter.js";
+} from "../../src/lib/spi-formatter.js";
 import {
   getCommandsByCategory,
   getCategories,
   getPluginCount,
   getPlugin,
   getPluginsByCategory,
-} from "../../src/lib/ourin-plugins.js";
-import { getDatabase } from "../../src/lib/ourin-database.js";
+} from "../../src/lib/spi-plugins.js";
+import { getDatabase } from "../../src/lib/spi-database.js";
 import { getCasesByCategory, getCaseCount } from "../../case/ourin.js";
 import fs from "fs";
 import path from "path";
@@ -232,8 +232,8 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   txt += `_© ${botConfig.bot?.name || "Si Paling Informasi"} | ${new Date().getFullYear()}_\n`;
   txt += `_ᴅᴇᴠᴇʟᴏᴘᴇʀ: ${botConfig.bot?.developer || "Lucky Archz"}_`;
 
-  const imagePath = path.join(process.cwd(), "assets", "images", "ourin.jpg");
-  const thumbPath = path.join(process.cwd(), "assets", "images", "ourin2.jpg");
+  const imagePath = path.join(process.cwd(), "assets", "images", "spi.jpg");
+  const thumbPath = path.join(process.cwd(), "assets", "images", "spi2.jpg");
 
   let imageBuffer = fs.existsSync(imagePath)
     ? fs.readFileSync(imagePath)

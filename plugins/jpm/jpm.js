@@ -1,13 +1,13 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import { getGroupMode } from '../group/botmode.js'
-import { fetchGroupsSafe } from '../../src/lib/ourin-jpm-helper.js'
+import { fetchGroupsSafe } from '../../src/lib/spi-jpm-helper.js'
 import config from '../../config.js'
 import fs from 'fs'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 let cachedThumb = null
 try {
-    if (fs.existsSync('./assets/images/ourin.jpg')) {
-        cachedThumb = fs.readFileSync('./assets/images/ourin.jpg')
+    if (fs.existsSync('./assets/images/spi.jpg')) {
+        cachedThumb = fs.readFileSync('./assets/images/spi.jpg')
     }
 } catch (e) {}
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
-import { f } from '../../src/lib/ourin-http.js'
-import te from '../../src/lib/ourin-error.js'
+import { f } from '../../src/lib/spi-http.js'
+import te from '../../src/lib/spi-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || 'Milik-Bot-Si Paling Informasi'
 
 const pluginConfig = {
@@ -61,7 +61,7 @@ async function handler(m, { sock }) {
         const stickerRes = await f(stickerUrl, 'buffer')
         if (!stickerRes) throw new Error('Gagal mengunduh sticker dari server')
             
-        const { addExifToWebp } = await import('../../src/lib/ourin-exif.js')
+        const { addExifToWebp } = await import('../../src/lib/spi-exif.js')
         let finalSticker = stickerRes
         try {
             finalSticker = await addExifToWebp(stickerRes, {

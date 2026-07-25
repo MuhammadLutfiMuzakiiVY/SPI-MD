@@ -1,7 +1,7 @@
 
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import { addExpWithLevelCheck } from '../../src/lib/ourin-level.js'
-import { getRpgContextInfo } from '../../src/lib/ourin-context.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import { addExpWithLevelCheck } from '../../src/lib/spi-level.js'
+import { getRpgContextInfo } from '../../src/lib/spi-context.js'
 const pluginConfig = {
     name: 'fishing',
     alias: ['fish', 'mancing'],

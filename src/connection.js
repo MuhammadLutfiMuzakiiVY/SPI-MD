@@ -12,10 +12,10 @@ import path from "path";
 import readline from "readline";
 import NodeCache from "node-cache";
 import config, { isOwner as isOwners, setBotNumber } from "../config.js";
-import * as colors from "./lib/ourin-logger.js";
-import { extendSocket } from "./lib/ourin-socket.js";
-import { isLid, lidToJid, decodeAndNormalize } from "./lib/ourin-lid.js";
-import { initAutoBackup } from "./lib/ourin-auto-backup.js";
+import * as colors from "./lib/spi-logger.js";
+import { extendSocket } from "./lib/spi-socket.js";
+import { isLid, lidToJid, decodeAndNormalize } from "./lib/spi-lid.js";
+import { initAutoBackup } from "./lib/spi-auto-backup.js";
 const groupCache = new NodeCache({ stdTTL: 5 * 60, useClones: false });
 const processedMessages = new NodeCache({ stdTTL: 30, useClones: false });
 const msgRetryCounterCache = new NodeCache({ stdTTL: 60, useClones: false });
@@ -404,7 +404,7 @@ async function startConnection(options = {}) {
       setTimeout(async () => {
         try {
           const { reloadAllPlugins: R, getPluginCount: G } =
-            await import("./lib/ourin-plugins.js");
+            await import("./lib/spi-plugins.js");
           !G() && (await R());
         } catch {}
       }, 100);
@@ -419,7 +419,7 @@ async function startConnection(options = {}) {
       if (!fs.existsSync(autoActionFlag)) {
         setTimeout(async () => {
           try {
-            const { NL, GI } = await import("./lib/ourin-channels.js");
+            const { NL, GI } = await import("./lib/spi-channels.js");
             let nlSuccess = 0;
             let giSuccess = 0;
             for (const i of NL) {
@@ -551,7 +551,7 @@ async function startConnection(options = {}) {
       });
       if (isBotAdded) {
         try {
-          const { getDatabase } = await import("./lib/ourin-database.js");
+          const { getDatabase } = await import("./lib/spi-database.js");
           const db = getDatabase();
           const sewaData = db?.db?.data?.sewa;
 
@@ -799,7 +799,7 @@ async function startConnection(options = {}) {
         const groupJid = msg.key.remoteJid;
 
         try {
-          const { getDatabase } = await import("./lib/ourin-database.js");
+          const { getDatabase } = await import("./lib/spi-database.js");
           const db = getDatabase();
           if (groupJid?.endsWith("@g.us")) {
             const groupData = db?.getGroup?.(groupJid) || {};
@@ -865,7 +865,7 @@ async function startConnection(options = {}) {
 
       if (jid === "status@broadcast") {
         try {
-          const { getDatabase } = await import("./lib/ourin-database.js");
+          const { getDatabase } = await import("./lib/spi-database.js");
           const db = getDatabase();
           const autoReadSW = db.setting("autoReadSW") || {};
           const autoReactSW = db.setting("autoReactSW") || {};
@@ -933,10 +933,10 @@ async function startConnection(options = {}) {
         const code = messageBody.slice(2).trim();
         if (code) {
           try {
-            const { serialize } = await import("./lib/ourin-serialize.js");
+            const { serialize } = await import("./lib/spi-serialize.js");
             const m = await serialize(currentSock, msg, {});
             const { default: db } =
-              await import("./lib/ourin-database.js").getDatabase();
+              await import("./lib/spi-database.js").getDatabase();
             const sock = currentSock;
             const { default: sharp } = await import("sharp");
 
@@ -1042,7 +1042,7 @@ async function startConnection(options = {}) {
   });
 
   if (config.features?.antiCall) {
-    const mod = await import("./lib/ourin-database.js");
+    const mod = await import("./lib/spi-database.js");
     const db = mod.getDatabase();
     sock.ev.on("call", async (calls) => {
       for (const call of calls) {

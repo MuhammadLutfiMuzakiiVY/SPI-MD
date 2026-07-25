@@ -1,5 +1,5 @@
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/ourin-database.js";
+import { getDatabase } from "../../src/lib/spi-database.js";
 import pkg from "ourin";
 const { generateWAMessageFromContent, proto } = pkg;
 const pluginConfig = {
@@ -52,7 +52,7 @@ const VARIANTS = {
     name: "NativeFlow",
     desc: "Interactive + limited_time_offer + bottom_sheet + single_select",
   },
-  v10: { id: 10, name: "NativeFlow", desc: "OURINNNNNNNNNN" },
+  v10: { id: 10, name: "NativeFlow", desc: "SPINNNNNNNNN" },
   v11: {
     id: 11,
     name: "Document Interactive",

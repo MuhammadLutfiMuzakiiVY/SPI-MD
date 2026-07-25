@@ -1,15 +1,15 @@
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 /**
  * 🐺 WEREWOLF GAME
  * Social deduction game for WhatsApp
  * 
  * Based on reference: RTXZY-MD-pro/lib/werewolf.js
- * Enhanced for OurinAI
+ * Enhanced for SPIAI
  */
 import config from '../../config.js'
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/ourin-error.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'werewolf',
     alias: ['ww', 'wwgc'],
@@ -35,15 +35,15 @@ let thumbWin = null
 
 try {
     const assetsPath = path.join(process.cwd(), 'assets', 'images')
-    if (fs.existsSync(path.join(assetsPath, 'ourin-games.jpg'))) {
-        thumbWW = fs.readFileSync(path.join(assetsPath, 'ourin-games.jpg'))
+    if (fs.existsSync(path.join(assetsPath, 'spi-games.jpg'))) {
+        thumbWW = fs.readFileSync(path.join(assetsPath, 'spi-games.jpg'))
     }
-    if (fs.existsSync(path.join(assetsPath, 'ourin.jpg'))) {
-        thumbNight = fs.readFileSync(path.join(assetsPath, 'ourin.jpg'))
-        thumbDay = fs.readFileSync(path.join(assetsPath, 'ourin.jpg'))
+    if (fs.existsSync(path.join(assetsPath, 'spi.jpg'))) {
+        thumbNight = fs.readFileSync(path.join(assetsPath, 'spi.jpg'))
+        thumbDay = fs.readFileSync(path.join(assetsPath, 'spi.jpg'))
     }
-    if (fs.existsSync(path.join(assetsPath, 'ourin-winner.jpg'))) {
-        thumbWin = fs.readFileSync(path.join(assetsPath, 'ourin-winner.jpg'))
+    if (fs.existsSync(path.join(assetsPath, 'spi-winner.jpg'))) {
+        thumbWin = fs.readFileSync(path.join(assetsPath, 'spi-winner.jpg'))
     }
 } catch (e) {
     console.log('[WW] Failed to load thumbnails:', e.message)

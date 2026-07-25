@@ -1,5 +1,5 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
 import path from 'path'
 import fs from 'fs'
 const pluginConfig = {
@@ -24,7 +24,7 @@ if (!global.kudetaWhitelist) global.kudetaWhitelist = {}
 
 let thumbOwner = null
 try {
-    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'ourin-owner.jpg')
+    const thumbPath = path.join(process.cwd(), 'assets', 'images', 'spi-owner.jpg')
     if (fs.existsSync(thumbPath)) thumbOwner = fs.readFileSync(thumbPath)
 } catch (e) {}
 

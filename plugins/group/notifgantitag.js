@@ -1,6 +1,6 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/ourin-database.js'
-import te from '../../src/lib/ourin-error.js'
+import { getDatabase } from '../../src/lib/spi-database.js'
+import te from '../../src/lib/spi-error.js'
 const pluginConfig = {
     name: 'notifgantitag',
     alias: ['notiflabel', 'notiftag', 'labeltag'],
@@ -167,7 +167,7 @@ async function handleLabelChange(msg, sock) {
                                 sourceUrl: null,
                                 title: "LABEL WARNING",
                                 body: null,
-                                thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                                thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                                 renderLargerThumbnail: true,
                             }
                         },
@@ -206,7 +206,7 @@ async function handleLabelChange(msg, sock) {
                     sourceUrl: null,
                     title: "LABEL WARNING",
                     body: null,
-                    thumbnail: fs.readFileSync('./assets/images/ourin.jpg'),
+                    thumbnail: fs.readFileSync('./assets/images/spi.jpg'),
                     renderLargerThumbnail: true,
                 }
             },
