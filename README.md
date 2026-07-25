@@ -51,22 +51,22 @@ Berikut adalah gambaran aliran eksekusi pesan dan pemrosesan event pada **SYSTEM
 
 ```mermaid
 flowchart TD
-    A[📱 WhatsApp Web / App] <-->|Baileys WebSocket Connection| B[🔌 SPI Core Socket Gateway]
-    B --> C[🛡️ Middleware & Protection Layer]
-    C -->|Cek Anti-Spam / Anti-Link / Banned| D[🧩 Plugin Event Router]
+    A["📱 WhatsApp Web / App"] <-->|"Baileys WebSocket Connection"| B["🔌 SPI Core Socket Gateway"]
+    B --> C["🛡️ Middleware & Protection Layer"]
+    C -->|"Cek Anti-Spam / Anti-Link / Banned"| D["🧩 Plugin Event Router"]
     
-    D -->|Match Prefix & Command| E1[🧠 AI Processing Engine\n(Gemini / Groq / OpenRouter)]
-    D -->|Match Prefix & Command| E2[🎮 RPG & Economy System\n(Coins, XP, Energy, Level)]
-    D -->|Match Prefix & Command| E3[🛒 E-Commerce & Store Engine\n(Order, Stok, Pakasir OTP)]
-    D -->|Match Prefix & Command| E4[🖼️ Media & Canvas Generator\n(FFmpeg / Skia-Canvas)]
+    D -->|"Match Prefix & Command"| E1["🧠 AI Processing Engine<br/>(Gemini, Groq, OpenRouter)"]
+    D -->|"Match Prefix & Command"| E2["🎮 RPG & Economy System<br/>(Coins, XP, Energy, Level)"]
+    D -->|"Match Prefix & Command"| E3["🛒 E-Commerce & Store Engine<br/>(Order, Stok, Pakasir OTP)"]
+    D -->|"Match Prefix & Command"| E4["🖼️ Media & Canvas Generator<br/>(FFmpeg / Skia-Canvas)"]
 
-    E1 --> F[(💾 Local JSON Database / Storage)]
+    E1 --> F[("💾 Local JSON Database / Storage")]
     E2 --> F
     E3 --> F
     E4 --> F
 
-    F --> G[💬 Responsive Message Dispatcher]
-    G -->|Send Text / Media / Buttons| A
+    F --> G["💬 Responsive Message Dispatcher"]
+    G -->|"Send Text / Media / Buttons"| A
 ```
 
 ---
