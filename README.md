@@ -1,162 +1,275 @@
 <div align="center">
-  <img src="./assets/images/spi2.jpg" alt="Si Paling Informasi Banner" width="400" style="border-radius:15px; margin-bottom: 20px;" />
+
+  <!-- HERO BANNER / IMAGE -->
+  <img src="https://raw.githubusercontent.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI/main/assets/images/spi2.jpg" alt="SYSTEM SERVICE SPI Banner" width="100%" style="border-radius: 12px; margin-bottom: 15px;" />
+
   <br />
-  
-  <h1>✨ Si Paling Informasi✨</h1>
-  <p><strong>Bot WhatsApp Multi-Device Generasi Baru dengan Sistem Plugin Modular & Integrasi Cerdas</strong></p>
+
+  <!-- DYNAMIC TYPING SVG -->
+  <a href="https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F5FF&center=true&vCenter=true&repeat=true&width=850&height=50&lines=%E2%9A%A1+SYSTEM+SERVICE+SPI+v2.4.0;%F0%9F%A4%96+NEXT-GEN+MULTIDEVICE+WHATSAPP+BOT+ENGINE;%F0%9F%A7%A0+HYBRID+AI+INTEGRATION+(GEMINI+%2B+GROQ+%2B+OPENROUTER);%F0%9F%9B%A1%EF%B8%8F+ENTERPRISE-GRADE+SECURITY+%26+PLUGIN+ARCHITECTURE" alt="Typing Header" />
+  </a>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Language-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-    <img src="https://img.shields.io/badge/Version-v2.3.0-007ACC?style=for-the-badge&logo=bamboo&logoColor=white" />
-    <img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Maintained%3F-Yes-green.svg?style=for-the-badge" />
+    <strong>Arsitektur Bot WhatsApp Multi-Device Generasi Terbaru Berbasis Node.js (ESM), Sistem Plugin Modular, Integrasi Multi-AI, dan Ekosistem RPG/Store Digital.</strong>
   </p>
+
+  <!-- SHIELDS BADGES WALL -->
+  <p align="center">
+    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-v22.x%20LTS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" /></a>
+    <a href="https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI"><img src="https://img.shields.io/badge/Engine-Baileys%20MD-007ACC?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Baileys" /></a>
+    <a href="https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI"><img src="https://img.shields.io/badge/Version-v2.4.0-FF007F?style=for-the-badge&logo=git&logoColor=white" alt="Version" /></a>
+    <a href="https://docker.com"><img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="License" /></a>
+  </p>
+
+  <p align="center">
+    <a href="#-fitur-utama--arsitektur-sistem">⚡ Fitur Utama</a> •
+    <a href="#-diagram-arsitektur">📐 Arsitektur</a> •
+    <a href="#-panduan-instalasi">🚀 Instalasi</a> •
+    <a href="#-konfigurasi-configjs">⚙️ Konfigurasi</a> •
+    <a href="#-pengembangan-plugin">🧩 Developer Guide</a> •
+    <a href="#-kontributor--kredits">👤 Pengembang</a>
+  </p>
+
 </div>
 
 ---
 
-Halo semuanya! 👋 Selamat datang di repositori resmi **Si Paling Informasi V2.3.0**. 
+## 📖 Ringkasan Proyek
 
-Buat kamu yang sedang mencari script bot WhatsApp yang ringan, punya fitur super lengkap, tapi gampang banget buat dipasang—kamu berada di tempat yang tepat. Si Paling Informasi didesain khusus agar **profesional, cepat, dan anti-ribet**, cocok dipakai buat belajar, jaga grup, atau pun yang lainnya
+**SYSTEM SERVICE SPI (v2.4.0)** adalah platform dan engine otomatisasi WhatsApp Multi-Device yang dibangun menggunakan **Node.js (EcmaScript Module / ESM)** dan pustaka WhatsApp socket teroptimasi. Didesain untuk keandalan tinggi, performa cepat, serta skalabilitas tinggi baik untuk penggunaan pribadi, komunitas grup, maupun kebutuhan bisnis komersial.
 
 > [!TIP]
-> Kami memakai pustaka **Baileys** terbaru yang memastikan bot berjalan lebih stabil untuk WhatsApp Multi-Device (bisa aktif di banyak perangkat sekaligus).
-
-## 🛒 Produk SPI
-
-| Layanan            | Deskripsi                                      | Akses |
-|-------------------|-----------------------------------------------|-------|
-| Panel Legal       | Panel resmi & aman                            | [Klik](https://cc.ourin.xyz) |
-| Custom Script     | Ubah script bot dengan mudah                  | [Klik](https://sc.ourin.xyz/build) |
-| Plugin Si Paling Informasi   | Plugin terbaru & update                       | [Klik](https://pl.ourin.xyz) |
-| Media Hosting     | Hosting gambar, video, audio, file            | [Klik](https://up.ourin.xyz) |
+> **SPI Engine** menggunakan arsitektur **Modular Plugin-based Event Dispatcher**, memudahkan penambahan fitur baru tanpa perlu mengubah struktur kode inti (core runtime).
 
 ---
 
-## 🌟 Kenapa Memilih Si Paling Informasi?
+## 📐 Diagram Arsitektur
 
-| Fitur | Penjelasan |
+Berikut adalah gambaran aliran eksekusi pesan dan pemrosesan event pada **SYSTEM SERVICE SPI**:
+
+```mermaid
+flowchart TD
+    A[📱 WhatsApp Web / App] <-->|Baileys WebSocket Connection| B[🔌 SPI Core Socket Gateway]
+    B --> C[🛡️ Middleware & Protection Layer]
+    C -->|Cek Anti-Spam / Anti-Link / Banned| D[🧩 Plugin Event Router]
+    
+    D -->|Match Prefix & Command| E1[🧠 AI Processing Engine\n(Gemini / Groq / OpenRouter)]
+    D -->|Match Prefix & Command| E2[🎮 RPG & Economy System\n(Coins, XP, Energy, Level)]
+    D -->|Match Prefix & Command| E3[🛒 E-Commerce & Store Engine\n(Order, Stok, Pakasir OTP)]
+    D -->|Match Prefix & Command| E4[🖼️ Media & Canvas Generator\n(FFmpeg / Skia-Canvas)]
+
+    E1 --> F[(💾 Local JSON Database / Storage)]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+
+    F --> G[💬 Responsive Message Dispatcher]
+    G -->|Send Text / Media / Buttons| A
+```
+
+---
+
+## ⚡ Fitur Utama & Kapabilitas Sistem
+
+| Kategori | Fitur & Deskripsi |
 | :--- | :--- |
-| **🤖 Teknologi AI Terbaru** | Sudah terintegrasi dengan Google Gemini, Groq, dan asisten pintar lainnya. Ngobrol sama bot rasanya kayak ngobrol sama manusia sungguhan! |
-| **🧩 Sistem Plugin Modular** | Nggak perlu pusing mikirin kodingan panjang. Fitur dibagi per file (*folder plugins*). Gampang ditambah, gampang dihapus. |
-| **🎮 RPG & Ekosistem Game** | Bikin grup WhatsApp-mu hidup dengan sistem Leveling, Kuis, Energi, Uang (Koin), hingga sistem Clan/Guild. |
-| **☁️ Dukungan Pterodactyl & VPS** | Terintegrasi penuh dengan panel Pterodactyl dan Vercel. Punya server digital ocean? Bisa di-manage langsung lewat WA. |
-
-<details>
-<summary><b>👀 Lihat Fitur Tambahan Lainnya (Klik untuk Membuka)</b></summary>
-Kami menyertakan berbagai fitur seru meskipun mungkin kamu hanya menggunakannya sesekali:
-<ul>
-  <li><b>Canvas Image Editor:</b> Buat meme dan lainnya langsung dari bot.</li>
-  <li><b>Fitur Islami & Religi:</b> Pengingat sholat, tafsir, dan bacaan Al-Qur'an.</li>
-  <li><b>Animasi & Ephoto:</b> Manipulasi foto menjadi ala anime atau efek keren lainnya.</li>
-  <li><b>Anti-Spam & Keamanan Grup:</b> Bot otomatis kick member yang kirim link ilegal, dsb.</li>
-  <li><b>Push Kontak (Marketing):</b> Khusus untuk promosi bisnis dengan sistem <i>broadcast</i> masal secara aman.</li>
-</ul>
-</details>
+| **🧠 Multi-AI Integration** | Terhubung langsung dengan Google Gemini 1.5/2.0, Groq Whisper (Transkrip Audio), OpenRouter (Llama 3.3, DeepSeek, Qwen), dan Vision AI. |
+| **🧩 Modular Plugin System** | Setiap perintah dipisahkan ke dalam folder `plugins/` (ESM format). Mendukung *hot-reloading* tanpa perlu merestart bot. |
+| **🤖 Manager JadiBot (Multi-Session)** | Memungkinkan bot utama membuat bot turunan (*clone bot*) baru melalui sistem pairing code mandiri. |
+| **🛡️ Keamanan & Anti-Spam Group** | Fitur Anti-Link, Anti-Toxic, Anti-Foreign Number, Anti-Bot, Anti-Delete, serta manajemen peran Admin & Owner otomatis. |
+| **🎮 RPG & Economy Engine** | Ekosistem game interaktif: Leveling system, Koin, Energi, Klaim Harian, Kuis, Tebak Gambar, Ular Tangga, dan Sistem Bank. |
+| **🛒 Otomatisasi Store & TopUp** | Manajemen produk digital, auto-payment gateway (Pakasir), transaksi otomatis, stok barang, serta riwayat transaksi. |
+| **🎨 Advanced Media & Canvas** | Pembuat stiker bergerak (GIF/Video via FFmpeg), Brat Canvas generator, Logo Maker, Card Welcome/Goodbye, dan OCR. |
+| **☁️ Multi-Platform Deployment** | Kompatibel penuh dengan Linux VPS, Docker Container, Termux Android, dan Panel Pterodactyl. |
 
 ---
 
 ## ⚙️ Persyaratan Sistem
 
-Sebelum mulai menjalankan bot impianmu, pastikan komputer/server kamu sudah memenuhi syarat ini ya:
-
-- **Node.js** (Wajib versi >= 22.0.0, **Rekomendasi pakai Node.JS versi 24.x.x LTS**). Kamu bisa [download di sini](https://nodejs.org/).
-- **Git** (Wajib untuk mengunduh script bot ini). [Download Git untuk Windows/Mac](https://git-scm.com/downloads) | Pengguna Termux: `pkg install git`
-- **FFmpeg** (Wajib agar bot bisa bikin sticker & olah video). [Panduan Install FFmpeg Windows/Linux](https://ffmpeg.org/download.html).
-
-> [!WARNING]
-> Jika `FFmpeg` tidak terinstall, fitur pembuat stiker gambar bergerak/video **tidak akan berfungsi**. Pastikan sudah terpasang dengan benar.
+| Komponen | Spesifikasi Minimal | Rekomendasi |
+| :--- | :--- | :--- |
+| **Node.js Runtime** | `v22.0.0` | `v24.x LTS` (EcmaScript Module Support) |
+| **NPM Package Manager** | `v10.0.0+` | `v10.x+` |
+| **Media Converter** | FFmpeg 4.x / 5.x | FFmpeg 6.x (Terpasang pada System PATH) |
+| **Memori (RAM)** | 512 MB RAM | 1 GB - 2 GB RAM |
+| **Sistem Operasi** | Ubuntu 20.04+ / Debian 11+ / Windows 10+ / Android Termux | Ubuntu 22.04 LTS Server / Docker Container |
 
 ---
 
-## 🚀 Panduan Instalasi (Langkah Demi Langkah)
+## 🚀 Panduan Instalasi
 
-Tenang saja, konfigurasinya sangat gampang walau kamu baru belajar! Kami mendukung sistem Windows, Panel Pterodactyl, Docker, hingga Termux!
-
-### 1. Ambil Source Code
-Buka terminal (Command Prompt/Git Bash/Termux) lalu jalankan:
+### 1. Cloning Repositori
+Buka terminal pada komputer atau server Anda dan jalankan perintah berikut:
 
 ```bash
-git clone https://github.com/LuckyArch/Si Paling Informasi.git
-cd Si Paling Informasi
+git clone https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI.git
+cd SYSTEM-SERVICE-SPI
 ```
 
 ---
 
-### 🐧 Khusus Pengguna Termux / Linux
-Kami sediakan script otomatis buat kamu biar gak pusing install modul tambahan (karena fitur canvas/sharp butuh dependensi C++). Cukup jalankan:
-```bash
-bash install.sh
-```
-
----
-
-### 🐳 Menggunakan Docker (Tinggal Pakai)
-Buat kamu yang pakai VPS dan ogah ribet, fitur ini sangat direkomendasikan karena sudah dibundle dengan environment terbaik (Node 22 Bookworm):
-```bash
-docker build -t spi-md .
-docker run -d --name spi-bot spi-md
-```
-
----
-
-### ⚙️ Instalasi Manual (Windows / Lainnya)
-Jika kamu tidak menggunakan Termux atau Docker, ikuti tahap instalasi standar ini:
-
-### 2. Instal Dependensi (Module)
-Selanjutnya, kita install dulu semua alat-alat tempurnya:
+### 2. Instalasi Dependensi Node.js
+Pasang pustaka modul yang dibutuhkan:
 
 ```bash
 npm install
 ```
-*(Proses ini memakan waktu beberapa menit tergantung koneksi internetmu)*
-
-### 3. Konfigurasi `config.js`
-> [!IMPORTANT]
-> Jangan lupa untuk mengedit file `config.js`. File ini adalah "jantung" dari bot kamu.
-Buka `config.js` favoritmu dengan teks editor, sesuaikan nomor WhatsApp kamu (sebagai Owner), Nama bot, Versi Bot, dan lainnya
-
-> [!IMPORTANT]
-> Jangan lupa mengisi **Pairing Number** di `config.js` dengan nomor WhatsApp bot kamu! berawalan dari 62, kalau indonesia jangan pakai 0.
-
-```javascript
-    session: {
-        pairingNumber: '62xxxxxxxxx',   // ini jangan lupa diisi ya, pakai nomor bot kamu
-        usePairingCode: true // true = pakai Pairing Code, false = pakai QR Code
-    },
-```
-
-### 4. Nyalakan Bot-nya!
-Setelah semuanya ter-install, jalankan perintah ini:
-
-```bash
-npm start
-```
-Bot nanti akan otomatis berjalan, kalau sampai disuruh pairing code
-code pairingnya **SPINAI**
-
-### 5. Menghubungkan WhatsApp
-Saat pertama kali dijalankan, sistem bot cerdas akan meminta kamu. 
-Bot akan mengirimkan **Pairing Code** (SPINAI). Cukup masukkan kode ini di aplikasi WhatsApp kamu `(Perangkat Tertaut -> Tautkan dengan Nomor Telepon)`, tempel kode SPINAI di 8 kolom itu.
 
 ---
 
-## 💡 Info & Tips Menarik
+### 3. Pengaturan Konfigurasi (`config.js`)
+Edit file `config.js` untuk mengonfigurasi nomor WhatsApp Anda sebagai owner dan bot pairing:
 
-> [!NOTE] 
-> Ingin deploy bot agar bisa jalan 24 jam nonstop?
-Kamu bisa menggunakan layanan **Panel Pterodactyl**, untuk tutorial, bisa nonton di yutub (aku belum buat tutorialnya xixixixi :b)
+```javascript
+    owner: {
+        name: 'Muhammad Lutfi Muzaki',   // Nama Pemilik Bot
+        number: ['6282362181059']        // Nomor Owner (Format 628xxx)
+    },
+    session: {
+        pairingNumber: '6282362181059',  // Nomor WhatsApp Bot
+        usePairingCode: true             // true = Gunakan Kode Pairing
+    },
+    bot: {
+        name: '𝗦𝗜 𝗣𝗔𝗟𝗜𝗡𝗚 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗦𝗜 (𝗦𝗣𝗜)',
+        version: '2.4.0',
+        developer: 'Muhammad Lutfi Muzaki'
+    }
+```
 
-## 🤝 Kontribusi
+---
 
-Sistem kami `Open Source`. Jika ada *bugs* (celah error) atau ingin menabahkan *plugin* seru karya sendiri:
-1. `Fork` repo ini.
-2. Lakukan perubahan kamu.
-3. Kirimkan `Pull Request`. Kami dengan senang hati menyambut karya terbaikmu!
+### 4. Menjalankan Server Engine SPI
+Jalankan perintah berikut untuk mengaktifkan bot:
+
+```bash
+# Modus Produksi
+npm start
+
+# Modus Pengembangan (Auto-Restart via Nodemon)
+npm run dev
+```
+
+Saat pertama kali berjalan, sistem akan memberikan **Kode Pairing 8 Digit** di terminal. Masukkan kode tersebut pada aplikasi WhatsApp Anda:
+> `WhatsApp -> Perangkat Tertaut -> Tautkan dengan Nomor Telepon`
+
+---
+
+### 🐳 Deploy Menggunakan Docker (Opsional)
+
+Untuk kemudahan deployment di VPS server tanpa menginstall Node.js secara manual:
+
+```bash
+# Build Docker Image
+docker build -t system-service-spi .
+
+# Jalankan Container
+docker run -d --name spi-bot-instance --restart always system-service-spi
+```
+
+---
+
+### 🐧 Deploy di Android Termux (Opsional)
+
+Untuk pengguna Android yang menjalankan bot lewat Termux:
+
+```bash
+pkg update && pkg upgrade -y
+pkg install git nodejs-lts ffmpeg -y
+git clone https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI.git
+cd SYSTEM-SERVICE-SPI
+bash install.sh
+npm start
+```
+
+---
+
+## 🧩 Panduan Pengembangan Plugin (Developer Guide)
+
+Setiap fitur pada **SYSTEM SERVICE SPI** menggunakan arsitektur Plugin ESM. Anda dapat membuat file baru di dalam folder `plugins/` dengan struktur seperti berikut:
+
+```javascript
+// Contoh: plugins/example/halo.js
+
+const pluginConfig = {
+    name: 'halo',
+    alias: ['hi', 'hello'],
+    category: 'general',
+    description: 'Menyapa pengguna secara ramah',
+    usage: '.halo',
+    example: '.halo',
+    isOwner: false,
+    isGroup: false,
+    cooldown: 5,
+    energi: 1
+}
+
+async function handler(m, { sock }) {
+    await m.reply(`Halo *${m.pushName}*! 👋 Selamat datang di SYSTEM SERVICE SPI.`)
+}
+
+export { handler, pluginConfig }
+```
+
+---
+
+## 📂 Struktur Direktori Proyek
+
+```
+SYSTEM-SERVICE-SPI/
+├── assets/                  # Aset gambar, video, dan media bot
+│   ├── images/              # Gambar banner, profile, dan thumbnail (spi.jpg, spi2.jpg)
+│   └── video/               # Media video pendukung (spi.mp4)
+├── database/                # Penyimpanan JSON lokal & statistik
+├── plugins/                 # Folder Plugin Modular
+│   ├── ai/                  # Plugin Integrasi AI (Gemini, Groq, OpenRouter)
+│   ├── download/            # Plugin Downloader (TikTok, YouTube, IG, Spotify)
+│   ├── fun/                 # Plugin Hiburan & Game
+│   ├── group/               # Plugin Moderasi & Keamanan Grup
+│   ├── main/                # Plugin Utama (Menu, Help, Info)
+│   ├── owner/               # Plugin Khusus Owner Bot
+│   ├── store/               # Plugin E-Commerce & Otomatisasi Produk
+│   └── tools/               # Plugin Utility & Converter
+├── src/                     # Core Library Engine SPI
+│   ├── lib/                 # Core Helper System (spi-socket.js, spi-database.js, dll)
+│   ├── scraper/             # Web Scrapers & API Integrations
+│   ├── connection.js        # Konfigurasi Koneksi WebSocket
+│   └── handler.js           # Event Handler & Dispatcher Utama
+├── config.js                # File Konfigurasi Utama Bot
+├── Dockerfile               # Konfigurasi Container Docker
+├── index.js                 # Entry Point Aplikasi
+├── package.json             # Manifest Dependensi & Scripts
+└── README.md                # Dokumentasi Resmi Proyek
+```
+
+---
+
+## 🤝 Kontribusi & Lisensi
+
+Proyek ini bersifat **Open Source** di bawah lisensi [MIT License](LICENSE).
+
+Jika Anda ingin berpatisipasi mengembangkan fitur atau memperbaiki kendala (bug):
+1. **Fork** repositori ini.
+2. Buat branch fitur baru (`git checkout -b fitur-baru`).
+3. Lakukan **Commit** perubahan Anda (`git commit -m "Tambah fitur X"`).
+4. Kirim **Pull Request (PR)**.
 
 ---
 
 <div align="center">
-  <b>Dibuat dengan ❤️ oleh Muhammad Lutfi Muzaki</b>
-  <p>Jangan lupa kasih ⭐ (Star) pada repo ini jika kamu merasa terbantu!</p>
+
+  <img src="https://raw.githubusercontent.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI/main/assets/images/spi.jpg" alt="SPI Profile Footer" width="120" style="border-radius: 50%; margin-bottom: 10px;" />
+
+  <h3>👨‍💻 Developed & Maintained by</h3>
+  <p><strong><a href="https://github.com/MuhammadLutfiMuzakiiVY">Muhammad Lutfi Muzaki</a></strong></p>
+
+  <p>
+    <a href="https://github.com/MuhammadLutfiMuzakiiVY"><img src="https://img.shields.io/badge/GitHub-MuhammadLutfiMuzakiiVY-181717?style=flat-square&logo=github" alt="GitHub" /></a>
+    <a href="mailto:muhammadlutfimuzaki2@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+    <a href="https://linkedin.com/in/muhammad-lutfi-muzaki-a55373263"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin" alt="LinkedIn" /></a>
+  </p>
+
+  <p><i>⭐ Jangan lupa memberikan Star pada repositori ini jika bermanfaat!</i></p>
+
 </div>
