@@ -1,13 +1,13 @@
 <div align="center">
 
   <!-- HERO BANNER / IMAGE -->
-  <img src="https://raw.githubusercontent.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI/main/assets/images/spi2.jpg" alt="SYSTEM SERVICE SPI Banner" width="100%" style="border-radius: 12px; margin-bottom: 15px;" />
+  <img src="https://raw.githubusercontent.com/MuhammadLutfiMuzakiiVY/SPI-MD/main/assets/images/spi2.jpg" alt="SPI-MD Banner" width="100%" style="border-radius: 12px; margin-bottom: 15px;" />
 
   <br />
 
   <!-- DYNAMIC TYPING SVG -->
-  <a href="https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F5FF&center=true&vCenter=true&repeat=true&width=850&height=50&lines=%E2%9A%A1+SYSTEM+SERVICE+SPI+v2.4.0;%F0%9F%A4%96+NEXT-GEN+MULTIDEVICE+WHATSAPP+BOT+ENGINE;%F0%9F%A7%A0+SMART+AI+ASSISTANTS+%26+IMAGE+GENERATION;%F0%9F%9B%A1%EF%B8%8F+ENTERPRISE-GRADE+SECURITY+%26+PLUGIN+ARCHITECTURE" alt="Typing Header" />
+  <a href="https://github.com/MuhammadLutfiMuzakiiVY/SPI-MD">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F5FF&center=true&vCenter=true&repeat=true&width=850&height=50&lines=%E2%9A%A1+SPI-MD+v2.4.0;%F0%9F%A4%96+NEXT-GEN+MULTIDEVICE+WHATSAPP+BOT+ENGINE;%F0%9F%A7%A0+SMART+AI+ASSISTANTS+%26+IMAGE+GENERATION;%F0%9F%9B%A1%EF%B8%8F+ENTERPRISE-GRADE+SECURITY+%26+PLUGIN+ARCHITECTURE" alt="Typing Header" />
   </a>
 
   <p align="center">
@@ -17,8 +17,8 @@
   <!-- SHIELDS BADGES WALL -->
   <p align="center">
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-v22.x%20LTS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" /></a>
-    <a href="https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI"><img src="https://img.shields.io/badge/Engine-Baileys%20MD-007ACC?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Baileys" /></a>
-    <a href="https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI"><img src="https://img.shields.io/badge/Version-v2.4.0-FF007F?style=for-the-badge&logo=git&logoColor=white" alt="Version" /></a>
+    <a href="https://github.com/MuhammadLutfiMuzakiiVY/SPI-MD"><img src="https://img.shields.io/badge/Engine-Baileys%20MD-007ACC?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Baileys" /></a>
+    <a href="https://github.com/MuhammadLutfiMuzakiiVY/SPI-MD"><img src="https://img.shields.io/badge/Version-v2.4.0-FF007F?style=for-the-badge&logo=git&logoColor=white" alt="Version" /></a>
     <a href="https://docker.com"><img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="License" /></a>
   </p>
@@ -38,16 +38,16 @@
 
 ## 📖 Ringkasan Proyek
 
-**SYSTEM SERVICE SPI (v2.4.0)** adalah platform dan engine otomatisasi WhatsApp Multi-Device yang dibangun menggunakan **Node.js (EcmaScript Module / ESM)** dan pustaka WhatsApp socket teroptimasi. Didesain untuk keandalan tinggi, performa cepat, serta skalabilitas tinggi baik untuk penggunaan pribadi, komunitas grup, maupun kebutuhan bisnis komersial.
+**SPI-MD (v2.4.0)** adalah platform dan engine otomatisasi WhatsApp Multi-Device yang dibangun menggunakan **Node.js (EcmaScript Module / ESM)** dan pustaka WhatsApp socket teroptimasi. Didesain untuk keandalan tinggi, performa cepat, serta skalabilitas tinggi baik untuk penggunaan pribadi, komunitas grup, maupun kebutuhan bisnis komersial.
 
 > [!TIP]
-> **SPI Engine** menggunakan arsitektur **Modular Plugin-based Event Dispatcher**, memudahkan penambahan fitur baru tanpa perlu mengubah struktur kode inti (core runtime).
+> **SPI-MD Engine** menggunakan arsitektur **Modular Plugin-based Event Dispatcher**, memudahkan penambahan fitur baru tanpa perlu mengubah struktur kode inti (core runtime).
 
 ---
 
 ## 📐 Diagram Arsitektur
 
-Berikut adalah gambaran aliran eksekusi pesan dan pemrosesan event pada **SYSTEM SERVICE SPI**:
+Berikut adalah gambaran aliran eksekusi pesan dan pemrosesan event pada **SPI-MD**:
 
 ```mermaid
 flowchart TD
@@ -104,8 +104,8 @@ flowchart TD
 Buka terminal pada komputer atau server Anda dan jalankan perintah berikut:
 
 ```bash
-git clone https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI.git
-cd SYSTEM-SERVICE-SPI
+git clone https://github.com/MuhammadLutfiMuzakiiVY/SPI-MD.git
+cd SPI-MD
 ```
 
 ---
@@ -132,7 +132,7 @@ Edit file `config.js` untuk mengonfigurasi nomor WhatsApp Anda sebagai owner dan
         usePairingCode: true             // true = Gunakan Kode Pairing
     },
     bot: {
-        name: '𝗦𝗜 𝗣𝗔𝗟𝗜𝗡𝗚 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗦𝗜 (𝗦𝗣𝗜)',
+        name: '𝗦𝗣𝗜-𝗠𝗗',
         version: '2.4.0',
         developer: 'Muhammad Lutfi Muzaki'
     }
@@ -140,7 +140,7 @@ Edit file `config.js` untuk mengonfigurasi nomor WhatsApp Anda sebagai owner dan
 
 ---
 
-### 4. Menjalankan Server Engine SPI
+### 4. Menjalankan Server Engine SPI-MD
 Jalankan perintah berikut untuk mengaktifkan bot:
 
 ```bash
@@ -162,10 +162,10 @@ Untuk kemudahan deployment di VPS server tanpa menginstall Node.js secara manual
 
 ```bash
 # Build Docker Image
-docker build -t system-service-spi .
+docker build -t spi-md .
 
 # Jalankan Container
-docker run -d --name spi-bot-instance --restart always system-service-spi
+docker run -d --name spi-md-instance --restart always spi-md
 ```
 
 ---
@@ -177,8 +177,8 @@ Untuk pengguna Android yang menjalankan bot lewat Termux:
 ```bash
 pkg update && pkg upgrade -y
 pkg install git nodejs-lts ffmpeg -y
-git clone https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI.git
-cd SYSTEM-SERVICE-SPI
+git clone https://github.com/MuhammadLutfiMuzakiiVY/SPI-MD.git
+cd SPI-MD
 bash install.sh
 npm start
 ```
@@ -187,7 +187,7 @@ npm start
 
 ## 🧩 Panduan Pengembangan Plugin (Developer Guide)
 
-Setiap fitur pada **SYSTEM SERVICE SPI** menggunakan arsitektur Plugin ESM. Anda dapat membuat file baru di dalam folder `plugins/` dengan struktur seperti berikut:
+Setiap fitur pada **SPI-MD** menggunakan arsitektur Plugin ESM. Anda dapat membuat file baru di dalam folder `plugins/` dengan struktur seperti berikut:
 
 ```javascript
 // Contoh: plugins/example/halo.js
@@ -206,7 +206,7 @@ const pluginConfig = {
 }
 
 async function handler(m, { sock }) {
-    await m.reply(`Halo *${m.pushName}*! 👋 Selamat datang di SYSTEM SERVICE SPI.`)
+    await m.reply(`Halo *${m.pushName}*! 👋 Selamat datang di SPI-MD.`)
 }
 
 export { handler, pluginConfig }
@@ -217,7 +217,7 @@ export { handler, pluginConfig }
 ## 📂 Struktur Direktori Proyek
 
 ```
-SYSTEM-SERVICE-SPI/
+SPI-MD/
 ├── assets/                  # Aset gambar, video, dan media bot
 │   ├── images/              # Gambar banner, profile, dan thumbnail (spi.jpg, spi2.jpg)
 │   └── video/               # Media video pendukung (spi.mp4)
@@ -231,7 +231,7 @@ SYSTEM-SERVICE-SPI/
 │   ├── owner/               # Plugin Khusus Owner Bot
 │   ├── store/               # Plugin E-Commerce & Otomatisasi Produk
 │   └── tools/               # Plugin Utility & Converter
-├── src/                     # Core Library Engine SPI
+├── src/                     # Core Library Engine SPI-MD
 │   ├── lib/                 # Core Helper System (spi-socket.js, spi-database.js, dll)
 │   ├── scraper/             # Web Scrapers & API Integrations
 │   ├── connection.js        # Konfigurasi Koneksi WebSocket
@@ -259,7 +259,7 @@ Jika Anda ingin berpatisipasi mengembangkan fitur atau memperbaiki kendala (bug)
 
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI/main/assets/images/spi.jpg" alt="SPI Profile Footer" width="120" style="border-radius: 50%; margin-bottom: 10px;" />
+  <img src="https://raw.githubusercontent.com/MuhammadLutfiMuzakiiVY/SPI-MD/main/assets/images/spi.jpg" alt="SPI Profile Footer" width="120" style="border-radius: 50%; margin-bottom: 10px;" />
 
   <h3>👨‍💻 Developed & Maintained by</h3>
   <p><strong><a href="https://github.com/MuhammadLutfiMuzakiiVY">Muhammad Lutfi Muzaki</a></strong></p>

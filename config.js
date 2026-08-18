@@ -20,7 +20,7 @@ const config = {
     },
 
     bot: {
-        name: '𝗦𝗬𝗦𝗧𝗘𝗠 𝗦𝗘𝗥𝗩𝗜𝗖𝗘 𝗦𝗣𝗜',                 // Nama bot
+        name: '𝗦𝗣𝗜-𝗠𝗗',                 // Nama bot
         version: '2.4.0',                 // Versi bot
         developer: 'Muhammad Lutfi Muzaki'          // Nama developer
     },

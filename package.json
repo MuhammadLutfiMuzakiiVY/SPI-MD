@@ -1,7 +1,7 @@
 {
-  "name": "system-service-spi",
+  "name": "spi-md",
   "version": "2.4.0",
-  "description": "SYSTEM SERVICE SPI - WhatsApp Multi-Device Bot Engine Berbasis Node.js & Modular Plugins",
+  "description": "SPI-MD - Next-Gen WhatsApp Multi-Device Bot Engine Berbasis Node.js & Modular Plugins",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
