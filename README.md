@@ -7,11 +7,11 @@
 
   <!-- DYNAMIC TYPING SVG -->
   <a href="https://github.com/MuhammadLutfiMuzakiiVY/SYSTEM-SERVICE-SPI">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F5FF&center=true&vCenter=true&repeat=true&width=850&height=50&lines=%E2%9A%A1+SYSTEM+SERVICE+SPI+v2.4.0;%F0%9F%A4%96+NEXT-GEN+MULTIDEVICE+WHATSAPP+BOT+ENGINE;%F0%9F%A7%A0+HYBRID+AI+INTEGRATION+(OPENROUTER+%2B+SMART+ASSISTANTS);%F0%9F%9B%A1%EF%B8%8F+ENTERPRISE-GRADE+SECURITY+%26+PLUGIN+ARCHITECTURE" alt="Typing Header" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F5FF&center=true&vCenter=true&repeat=true&width=850&height=50&lines=%E2%9A%A1+SYSTEM+SERVICE+SPI+v2.4.0;%F0%9F%A4%96+NEXT-GEN+MULTIDEVICE+WHATSAPP+BOT+ENGINE;%F0%9F%A7%A0+SMART+AI+ASSISTANTS+%26+IMAGE+GENERATION;%F0%9F%9B%A1%EF%B8%8F+ENTERPRISE-GRADE+SECURITY+%26+PLUGIN+ARCHITECTURE" alt="Typing Header" />
   </a>
 
   <p align="center">
-    <strong>Arsitektur Bot WhatsApp Multi-Device Generasi Terbaru Berbasis Node.js (ESM), Sistem Plugin Modular, Integrasi Multi-AI, dan Ekosistem RPG/Store Digital.</strong>
+    <strong>Arsitektur Bot WhatsApp Multi-Device Generasi Terbaru Berbasis Node.js (ESM), Sistem Plugin Modular, Integrasi Smart AI, dan Ekosistem RPG/Store Digital.</strong>
   </p>
 
   <!-- SHIELDS BADGES WALL -->
@@ -55,7 +55,7 @@ flowchart TD
     B --> C["🛡️ Middleware & Protection Layer"]
     C -->|"Cek Anti-Spam / Anti-Link / Banned"| D["🧩 Plugin Event Router"]
     
-    D -->|"Match Prefix & Command"| E1["🧠 AI Processing Engine<br/>(OpenRouter & Smart AI)"]
+    D -->|"Match Prefix & Command"| E1["🧠 AI Processing Engine<br/>(Smart AI & Vision)"]
     D -->|"Match Prefix & Command"| E2["🎮 RPG & Economy System<br/>(Coins, XP, Energy, Level)"]
     D -->|"Match Prefix & Command"| E3["🛒 E-Commerce & Store Engine<br/>(Order, Stok, Pakasir OTP)"]
     D -->|"Match Prefix & Command"| E4["🖼️ Media & Canvas Generator<br/>(FFmpeg / Skia-Canvas)"]
@@ -75,7 +75,7 @@ flowchart TD
 
 | Kategori | Fitur & Deskripsi |
 | :--- | :--- |
-| **🧠 Multi-AI Integration** | Terhubung langsung dengan OpenRouter AI (Llama 3.3, DeepSeek, Qwen) dan Smart Vision Assistants. |
+| **🧠 Smart AI Integration** | Dilengkapi dengan Smart AI Assistants, Image Generator, Face Swap, dan Vision Tools. |
 | **🧩 Modular Plugin System** | Setiap perintah dipisahkan ke dalam folder `plugins/` (ESM format). Mendukung *hot-reloading* tanpa perlu merestart bot. |
 | **🤖 Manager JadiBot (Multi-Session)** | Memungkinkan bot utama membuat bot turunan (*clone bot*) baru melalui sistem pairing code mandiri. |
 | **🛡️ Keamanan & Anti-Spam Group** | Fitur Anti-Link, Anti-Toxic, Anti-Foreign Number, Anti-Bot, Anti-Delete, serta manajemen peran Admin & Owner otomatis. |
@@ -223,7 +223,7 @@ SYSTEM-SERVICE-SPI/
 │   └── video/               # Media video pendukung (spi.mp4)
 ├── database/                # Penyimpanan JSON lokal & statistik
 ├── plugins/                 # Folder Plugin Modular
-│   ├── ai/                  # Plugin Integrasi AI (Gemini, Groq, OpenRouter)
+│   ├── ai/                  # Plugin Integrasi AI (Smart AI, Vision, Image Gen)
 │   ├── download/            # Plugin Downloader (TikTok, YouTube, IG, Spotify)
 │   ├── fun/                 # Plugin Hiburan & Game
 │   ├── group/               # Plugin Moderasi & Keamanan Grup

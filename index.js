@@ -147,6 +147,7 @@ function setupAntiCrash() {
   })
 
   process.on("warning", (warning) => {
+    if (warning.name === "DeprecationWarning" && warning.message?.includes("punycode")) return
     logger.warn("system", `${warning.name}: ${warning.message}`)
   })
 

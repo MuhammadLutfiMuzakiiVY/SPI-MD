@@ -10,7 +10,7 @@ const config = {
     },
 
     owner: {
-        name: 'Si Paling Informasi',                    // Nama owner
+        name: 'Muhammad Lutfi Muzaki',                    // Nama owner
         number: ['6282362181059']         // Format: 628xxx (tanpa + atau 0)
     },
 
@@ -20,9 +20,9 @@ const config = {
     },
 
     bot: {
-        name: '𝗦𝗜 𝗣𝗔𝗟𝗜𝗡𝗚 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗦𝗜 (𝗦𝗣𝗜)',                 // Nama bot
+        name: '𝗦𝗬𝗦𝗧𝗘𝗠 𝗦𝗘𝗥𝗩𝗜𝗖𝗘 𝗦𝗣𝗜',                 // Nama bot
         version: '2.4.0',                 // Versi bot
-        developer: 'Si Paling Informasi'          // Nama developer
+        developer: 'Muhammad Lutfi Muzaki'          // Nama developer
     },
 
     mode: 'public',

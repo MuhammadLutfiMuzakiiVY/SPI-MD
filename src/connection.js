@@ -262,18 +262,20 @@ async function startConnection(options = {}) {
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 3000));
-      const code = await sock.requestPairingCode(phoneNumber, "SPIPALIN");
+      const rawCode = await sock.requestPairingCode(phoneNumber);
+      const code = rawCode?.match(/.{1,4}/g)?.join("-") || rawCode;
       console.log("");
       console.log(
         colors.createBanner(
           [
             "",
-            "   PAIRING CODE   ",
+            "             PAIRING CODE             ",
             "",
-            `   ${colors.chalk.bold(colors.chalk.greenBright(code))}   `,
+            `              ${colors.chalk.bold(colors.chalk.greenBright(code))}              `,
             "",
-            "  Masukkan kode ini di WhatsApp  ",
-            "  Settings > Linked Devices > Link a Device  ",
+            "   Masukkan kode ini di WhatsApp:      ",
+            "   Settings > Linked Devices           ",
+            "   > Link with phone number instead    ",
             "",
           ],
           "green",

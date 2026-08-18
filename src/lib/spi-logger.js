@@ -1,4 +1,4 @@
-import chalk from 'chalk/index.js'
+import chalk from 'chalk'
 import gradient from 'gradient-string'
 import figlet from 'figlet'
 import * as timeHelper from './spi-time.js'
@@ -201,12 +201,17 @@ const c = {
 
 function divider() { console.log(k.bd("─".repeat(46))) }
 
+const stripAnsi = (str) => String(str).replace(/\u001b\[[0-9;]*m/g, "")
+
 function createBanner(lines, color = "green") {
-  const maxLen = Math.max(...lines.map((l) => l.length))
-  const padded = lines.map((l) => l.padEnd(maxLen))
-  let res = k.bd(`╭${"─".repeat(maxLen + 2)}╮`) + "\n"
-  for (const line of padded) res += k.bd("│") + " " + chalk.white(line) + " " + k.bd("│") + "\n"
-  res += k.bd(`╰${"─".repeat(maxLen + 2)}╯`)
+  const visualLengths = lines.map((l) => stripAnsi(l).length)
+  const maxLen = Math.max(...visualLengths, 0)
+  let res = k.bd(`╭${"─".repeat(maxLen + 4)}╮`) + "\n"
+  for (let i = 0; i < lines.length; i++) {
+    const pad = maxLen - visualLengths[i]
+    res += k.bd("│") + "  " + lines[i] + " ".repeat(pad) + "  " + k.bd("│") + "\n"
+  }
+  res += k.bd(`╰${"─".repeat(maxLen + 4)}╯`)
   return res
 }
 
